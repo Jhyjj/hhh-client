@@ -9,7 +9,6 @@ import "swiper/css/pagination";
 SwiperCore.use([Navigation, Pagination, Autoplay])
 
 
-
 const Main = () => {
     
     return (
