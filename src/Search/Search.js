@@ -12,7 +12,7 @@ const Search = () => {
                     <li className='likebtn'>숲</li>
                     <li className='likebtn'>도심</li>
                     <li className='likebtn'>시골</li>
-                    <li className='likebtn'>???</li>
+                    <li className='likebtn'>모든 숙소보기</li>
                 </ul>
             </form>
         </div>

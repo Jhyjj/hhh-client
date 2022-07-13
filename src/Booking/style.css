@@ -1,0 +1,36 @@
+
+.left_img img{
+    width:300px;
+    height:300px;
+}
+table{
+    height:300px;
+    padding: 50px 0;
+}
+th{
+    min-width: 70px;
+    padding-right: 20px;
+}
+/* 최소 너비를 줘서 큰제목이 한줄로 되지않도록 설정 */
+.left td{
+    max-width: 500px;
+}
+/* 최대 너비로 글이 더이상 밀려나지 않고 제자리 고정하도록 설정 */
+#Booking{
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+    padding: 30px 0;
+    margin: 50px auto;
+    width:100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.right_text{
+    max-width: 900px;
+    width:80%;
+    display: flex;
+    justify-content: space-around;
+}
+/* 텍스트의 크기를 최대 900으로 설정해 img와 합쳐서 1200을 맞춰서 img의 위치고정 */
