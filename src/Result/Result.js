@@ -13,7 +13,7 @@ const Result = () => {
                 <Link to="/detail/:1">
                 <li>
                     <div className='imgbox'>
-                    <img src="image/main.jpeg" alt=""/>
+                    <img src="/image/main.jpeg" alt=""/>
                     </div> 
                     <div className='textbox'>
                         <p>숙소이름</p>
