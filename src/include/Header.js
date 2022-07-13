@@ -16,8 +16,8 @@ const Header = () => {
                 <ul>
                     <li><Link to='/'>Home</Link></li>
                     <li onClick={()=>searchPopUp()}>Search</li>
-                    <li><Link to='/'>Login</Link></li>
-                    <li><Link to='/'>Join</Link></li>
+                    <li><Link to='/login'>Login</Link></li>
+                    <li><Link to='/join'>Join</Link></li>
                     <li><Link to='/'>Reservation</Link></li>
                 </ul>
             </nav>
