@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import { Table, TableBody, TableCell, TableRow } from '@mui/material';
 
 const Login = () => {
     return (
@@ -11,24 +12,23 @@ const Login = () => {
             </div>
             <div id='input'>
                 <form>
-                    <table>
-                        <tr>
-                            <th>Name</th>
-                            <td><input></input></td>
-                        </tr>
-                        <tr>
-                            <th>Phone Nunber</th>
-                            <td><input></input> - <input></input></td>
-                        </tr>
-                        <tr>
-                            <th>Address</th>
-                            <td><input></input>
-                            <button className='add_btn'>우편번호검색</button></td>
-                        </tr>
-                        <tr>
-                            <button className='login_btn'>로그인</button>
-                        </tr>
-                    </table>
+                    <Table>
+                        <TableBody>
+                            <TableRow>
+                                <TableCell><span>*</span>ID</TableCell>
+                                <TableCell>
+                                    <input></input>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell><span>*</span>PASSWORD</TableCell>
+                                <TableCell>
+                                    <input></input>
+                                </TableCell>
+                            </TableRow>
+                        </TableBody>
+                    </Table>
+                    <button className='login_btn'>로그인</button>
                 </form>
             </div>
         </div>
