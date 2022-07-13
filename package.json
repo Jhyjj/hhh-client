@@ -14,16 +14,13 @@
     "data-fns": "^0.1.8",
     "moment": "^2.29.4",
     "react": "^18.2.0",
-<<<<<<< HEAD
+    "react-calendar": "^3.7.0",
+    "react-date-range": "^1.4.0",
+    "react-datepicker": "^4.8.0",
     "react-daum-postcode": "^3.1.1",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
-=======
-    "react-calendar": "^3.7.0",
-    "react-date-range": "^1.4.0",
-    "react-dom": "^18.2.0",
     "react-query": "^3.39.1",
->>>>>>> 68298e00e13966bb48c35f57c51de41e8d958deb
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "swiper": "^8.3.0",
