@@ -42,10 +42,10 @@ a{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  position: absolute;
-  z-index: 10;
+  /* position: absolute; */
+  /* z-index: 10;
   bottom: 5%;
-  left: 15%;
+  left: 15%; */
 }
 
 #footer h2{width: 100%; text-align: left;}
