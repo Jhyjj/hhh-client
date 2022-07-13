@@ -11,7 +11,6 @@ const Header = () => {
     }
     return (
         <div id="header">
-            <div id='cursor'></div>
             <h1><img src="image/logo.png" alt=''/></h1>
             <nav>
                 <ul>
@@ -20,6 +19,7 @@ const Header = () => {
                     <li><Link to='/login'>Login</Link></li>
                     <li><Link to='/join'>Join</Link></li>
                     <li><Link to='/'>Reservation</Link></li>
+                    <li><Link to='/room'>숙소 추가(일단넣을게용)</Link></li>
                 </ul>
             </nav>
             <Search/>

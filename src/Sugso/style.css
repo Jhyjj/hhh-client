@@ -1,0 +1,57 @@
+#sugso {
+    max-width: 1200px;
+    margin: 100px auto;
+}
+.ant-input {
+    width: 70%;
+}
+#upload_img {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(250,250,253);
+    border: 1px solid #eee;
+    margin-right: 10px;
+}
+#upload_img span {
+    font-size: 12px;
+}
+#upload_img img {
+    width: 50px;
+    height: 50px;
+}
+/* 이미지 업로드 img */
+.ant-upload {
+    display: flex;
+}
+#sugso h1 {
+    font-size: 30px;
+    margin-bottom: 70px;
+}
+.ant-form-item-label {
+    width: 20%;
+    text-align: left;
+}
+.ant-form-item-control {
+    width: 80%;
+}
+#check_input {
+    width: 20%;
+    margin-right: 5px;
+}
+#number {
+    border-radius: 50%;
+    vertical-align: middle;
+}
+#input_number {
+    width: 10%;
+    margin: 0 10px;
+}
+#scroll {
+    border-radius: 50%;
+    border: 2px solid #222;
+    padding-top: 4px;
+}
