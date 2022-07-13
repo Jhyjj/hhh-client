@@ -20,7 +20,8 @@ const Main = () => {
       scrollbar={{ draggable: true }} //슬라이드를 드래그해서 넘길 수 있게 하기
       navigation={true} //버튼
       pagination={{ clickable: true }}
-      autoplay={{delay: 3000}} 
+      autoplay={{delay: 3000}} //3초마다 자동으로 넘기기
+      loop={true} //무한반복
         >
         <SwiperSlide><img src="image/main.jpeg" alt=""></img></SwiperSlide>
         <SwiperSlide><img src="image/test.jpeg" alt=""></img></SwiperSlide>
