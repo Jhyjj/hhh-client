@@ -1,0 +1,49 @@
+#header {
+    color: #222;
+}
+#login {
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+}
+#text {
+    width: 250px;
+    height: 500px;
+    /* background-color: #672c75; */
+    background-color: #6667AB;
+    color: #fff;
+    font-size: 28px;
+}
+span{
+    font-size: 100px;
+}
+
+#input {
+    width: 100%;
+}
+#input table {
+    margin: 0 auto;
+}
+#input tr {
+    width: 30%;
+}
+#input td {
+    width: 70%;
+}
+.login_btn {
+    background-color: #6667AB;
+    border: none;
+    outline: none;
+    padding: 15px 30px;
+    color: #fff;
+    font-size: 14px;
+}
+.add_btn {
+    background-color: #6667AB;
+    border: none;
+    outline: none;
+    padding: 5px 8px;
+    color: #fff;
+    font-size: 12px;
+}
