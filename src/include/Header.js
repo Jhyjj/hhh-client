@@ -11,7 +11,7 @@ const Header = () => {
     }
     return (
         <div id="header">
-            <h1><img src="image/logo.png" alt=''/></h1>
+            <h1><img src="/image/logo.png" alt=''/></h1>
             <nav>
                 <ul>
                     <li><Link to='/'>Home</Link></li>
