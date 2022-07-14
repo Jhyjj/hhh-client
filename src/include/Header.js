@@ -19,7 +19,7 @@ const Header = () => {
                     <li onClick={()=>searchPopUp()}>Search</li>
                     <li><Link to='/login'>Login</Link></li>
                     <li><Link to='/join'>Join</Link></li>
-                    <li><Link to='/'>Reservation</Link></li>
+                    <li><Link to='/Booking'>Reservation</Link></li>
                 </ul>
             </nav>
             <Search/>
