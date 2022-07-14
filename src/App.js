@@ -10,7 +10,7 @@ import Result from './Result/Result';
 import Detailview from './Detail/Detailview';
 import Booking from './Booking/Booking';
 import Reservation from './Reservation/Reservation';
-
+import Sugso from './Sugso/Sugso';
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
         <Route path='/detail/:1' element={<Detailview/>} />
         <Route path='/booking' element={<Booking/>} />
         <Route path='/reser' element={<Reservation/>} />
+        <Route path='/room' element={<Sugso/>} />
       </Routes>
       <Footer></Footer>
     </div>
