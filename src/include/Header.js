@@ -12,14 +12,14 @@ const Header = () => {
     return (
         <div id="header">
             <div id='cursor'></div>
-            <h1><img src="image/logo.png" alt=''/></h1>
+            <h1><img src="/image/logo.png" alt=''/></h1>
             <nav>
                 <ul>
                     <li><Link to='/'>Home</Link></li>
                     <li onClick={()=>searchPopUp()}>Search</li>
                     <li><Link to='/login'>Login</Link></li>
                     <li><Link to='/join'>Join</Link></li>
-                    <li><Link to='/'>Reservation</Link></li>
+                    <li><Link to='/Booking'>Reservation</Link></li>
                 </ul>
             </nav>
             <Search/>

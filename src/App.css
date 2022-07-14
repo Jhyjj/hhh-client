@@ -18,7 +18,7 @@ a{
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  z-index: 0;
+  z-index: 10;
   color: black;
 }
 
@@ -48,6 +48,10 @@ a{
   left: 15%; */
   font-size: 14px;
   vertical-align: bottom;
+}
+#footer p {
+  font-size: 14px;
+  font-weight: normal;
 }
 
 #footer h2{
@@ -80,10 +84,10 @@ a{
 }
 
 /* 마우스 커서 */
-body {
+/* body { */
   /* 커서 안보이게 숨기기 */
   /* cursor: none; */
-}
+/* } */
 #cursor {
   width: 10px;
   height: 10px;

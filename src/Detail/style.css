@@ -1,6 +1,5 @@
 #Detailview{
     width: 100%;
-    height: 80vh;
     margin: 0 auto;
     padding-top: 20px;
 }
@@ -19,7 +18,7 @@
     height: 650px;
 }
 
-#imgbox>img{
+#imgbox img{
     width: 100%;
     height: 100%;
 }
@@ -27,9 +26,26 @@
 #textbox{
     width: 30%;
     background: #eee;
-    padding: 20px;
+    padding:10px 20px;
 }
 
 #textbox h3{
     padding-bottom: 20px;
+}
+
+#textbox table{
+    height: 100%;
+}
+
+#textbox th{
+    width: 35%;
+}
+
+
+
+
+/* 캘린더 스타일  --> 캘린더 제일 상위 div 클래스 cal로 지정함 */
+
+.cal{
+    border: 1px solid #ccc;
 }

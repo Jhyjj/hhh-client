@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import './style.css'
 import { DateRange } from 'react-date-range';
-import 'antd/dist/antd.css';
 import 'react-date-range/dist/styles.css'; // main style file 
 import 'react-date-range/dist/theme/default.css'; // theme css file
 
