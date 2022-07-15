@@ -22,6 +22,7 @@
     width: 250px;
     height: 300px;
     border: 1px solid black;
+    position: relative;
 }
 
 #result li .imgbox{
@@ -32,4 +33,11 @@
 
 #result li .imgbox img{
     height: 100%;
+}
+
+#result li .textbox{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color: rgba(265,265,265,0.5);
 }

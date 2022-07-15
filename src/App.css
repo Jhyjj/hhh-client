@@ -82,27 +82,3 @@ a{
 #icon .icons div {
   margin:  0 auto;
 }
-
-/* 마우스 커서 */
-/* body { */
-  /* 커서 안보이게 숨기기 */
-  /* cursor: none; */
-/* } */
-#cursor {
-  width: 10px;
-  height: 10px;
-  border: 2px solid #6667AB;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 1000;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  transition: 0.3s;
-  transform-origin: 100% 100%;
-  backdrop-filter: sepia(20%);
-  background-size: cover;
-}
-#cursor-grow {
-  transform: scale(2);
-  background-color: blueviolet;
-}

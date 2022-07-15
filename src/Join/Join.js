@@ -3,11 +3,19 @@ import './style.css';
 import { Table, TableBody, TableCell, TableRow } from '@mui/material';
 import PopupDom from './PopupDom';
 import PopupPostCode from './PopupPostCode';
+import axios from 'axios';
 
 const Join = () => {
     // 팝업창 상태 관리
     const [ isPopupOpen, setIspopupOpen ] = useState(false);
 
+    const onAddData = (data)=>{
+        setFormData({
+            ...formData,
+            a_add1 : data.address
+        })
+    }
+    
     // 팝업창 상태 true 변경
     const openPostCode = () => {
         setIspopupOpen(true);
@@ -15,6 +23,52 @@ const Join = () => {
     // 팝업창 상태 false 변경
     const closePostCode = () => {
         setIspopupOpen(false);
+    }
+
+    const [formData, setFormData] = useState({
+        a_id: "",
+        a_pw:"",
+        a_name: "",
+        a_p1 : "",
+        a_p2 : "",
+        a_p3 : "",
+        a_add1 : "",
+        a_add2 : "",
+    })
+
+    const onChange=(e)=>{
+        console.log(formData);
+        const {name, value} = e.target;
+        setFormData({
+            ...formData,
+            [name]:value
+        })
+
+    }
+
+    const onSubmit = (e)=>{
+        e.preventDefault();
+        console.log(formData);
+        if(formData.a_id !== "" &&
+            formData.a_pw !== "" &&
+            formData.a_name !== "" &&
+            formData.a_p1 !== "" &&
+            formData.a_p2 !== "" &&
+            formData.a_p3 !== "" &&
+            formData.a_add1 !== "" &&
+            formData.a_add2 !== "" ){
+                insertMembers();
+            }
+        }
+    
+    function insertMembers(){
+        axios.post('http://localhost:3001/addjoin',formData)
+        .then(result=>{
+            console.log(result);
+        })
+        .catch(e=>{
+            console.log(e);
+        })
     }
 
     return (
@@ -25,34 +79,40 @@ const Join = () => {
                 </div>
             </div>
             <div id='input'>
-                <form>
+                <form onSubmit={onSubmit}>
                     <Table>
                         <TableBody>
                             <TableRow>
                                 <TableCell><span>*</span>NAME</TableCell>
                                 <TableCell>
-                                    <input></input>
+                                    <input name="a_name" onChange={onChange}/>
                                 </TableCell>
                             </TableRow>
                             <TableRow>
                                 <TableCell><span>*</span>ID</TableCell>
                                 <TableCell>
-                                    <input></input>
+                                    <input name="a_id" onChange={onChange}/>
                                 </TableCell>
                             </TableRow>
                             <TableRow>
                                 <TableCell><span>*</span>PASSWORD</TableCell>
                                 <TableCell>
-                                    <input
-                                    type="password"
-                                    ></input>
+                                    <input name="a_pw" type="password" onChange={onChange}/>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell><span>*</span>PHONE</TableCell>
+                                <TableCell>
+                                    <input className="pinput" name="a_p1" type="text" onChange={onChange}/>─
+                                    <input className="pinput" name="a_p2" type="text" onChange={onChange}/>─
+                                    <input className="pinput" name="a_p3" type="text" onChange={onChange}/>
                                 </TableCell>
                             </TableRow>
                             <TableRow>
                                 <TableCell><span>*</span>ADDRESS</TableCell>
                                 <TableCell>
-                                    <input id='add' placeholder='주소'></input>
-                                    <input id='add' placeholder='상세주소'></input>
+                                    <input className='add' placeholder='주소' name="a_add1" value={formData.a_add1} onChange={onChange}/>
+                                    <input className='add' placeholder='상세주소' name="a_add2" onChange={onChange}/>
                                     <button className='add_btn' type='button' onClick={openPostCode}>우편번호검색</button>
                                     <div id='popupDom'>
                                         {
@@ -60,6 +120,7 @@ const Join = () => {
                                                 <PopupDom>
                                                     <PopupPostCode
                                                     onClose={closePostCode}
+                                                    onAddData={onAddData}
                                                     >
                                                     </PopupPostCode>
                                                 </PopupDom>

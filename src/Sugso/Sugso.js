@@ -97,8 +97,7 @@ const Sugso = () => {
 
                 <Form.Item
                 label={<div id='upload_text'>어메니티</div>}>
-                    <TextArea>
-                    </TextArea>
+                    <textarea></textarea>
                 </Form.Item>
                 <Divider></Divider>
 
