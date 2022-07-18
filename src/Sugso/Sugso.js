@@ -9,6 +9,12 @@ import SugsoImg from './SugsoImg';
 
 const Sugso = () => {
 
+    
+    const [content, setContent] = useState("");
+    const [uploadedImg, setUploadedImg] = useState({
+        fileName: "",
+        fillPath: ""
+    });
     const [formData, setFormData] = useState({
         rname: "",
         minp: 2,
@@ -20,10 +26,47 @@ const Sugso = () => {
         radd : "",
         sns : "",
         info : "",
+        imgurl : ""
     })
+    
+    const onChangeImg = (e) => {
+        setContent(e.file);
+        // console.log(e.file)
+        if(content){
+            // console.log(content.name)
+        onSubmitimg(e);
+    }
+    };
+    
+    const onSubmitimg = (e) => {
+
+        // e.preventDefault();
+        const formData1 = new FormData();
+        formData1.append("img", content);
+        for (const value of formData1.values()) {
+            console.log(value);
+          }
+        axios
+            .post("http://localhost:3001/upload", formData1)
+            .then(res => {
+                console.log(res);
+                const { fileName } = res.data;
+                // console.log();
+                // setUploadedImg({ fileName });
+                // onSubmit(formData1);
+                setFormData({ 
+                    ...formData,
+                    imgurl : fileName })
+            })
+            .catch(err => {
+                console.error(err);
+            });
+    };
+
+  
 
     const onChange=(e)=>{
-        console.log(formData);
+        // console.log(formData);
         const {name, value} = e.target;
         setFormData({
             ...formData,
@@ -33,27 +76,18 @@ const Sugso = () => {
     }
 
     const onSubmit =(e)=>{
-        console.log(formData);
+        // console.log(formData);
         insertRooms();
     }
 
     function insertRooms(){
         axios.post('http://localhost:3001/addroom',formData)
         .then(result=>{
-            console.log(result);
+            // console.log(result);
         })
         .catch(e=>{
             console.log(e);
         })
-    }
-
-    const onChangeImg = (info)=>{
-        if(info.file.status === "uploading"){
-            return;
-        }
-        if(info.file.status === "done"){
-            console.log(info.file);
-        }
     }
 
     
@@ -103,26 +137,15 @@ const Sugso = () => {
                 <div id='scroll'><AiOutlineArrowUp size={30}/></div>
             </BackTop>
             <h1>숙소 등록하기</h1>
-            <Form onFinish={onSubmit}>
+            <Form onFinish={onSubmit} encType='multipart/form-data'>
                 <Form.Item
                 label={<div className='upload-label'>숙소 사진</div>}>
-                    <Upload id='poto' onChange={onChangeImg} listType="picture" showUploadList={false} name="image"> 
-                        <div id='upload_img'>
+                    <Upload id='fileAdd' action="http://localhost:3001/upload" onChange={onChangeImg} listType="picture" 
+                    showUploadList={false} name="img"> 
+                        <div id='upload_img' >
                             <img src='./image/camera.png' alt=''></img>
                             <span>이미지를 업로드 해주세요.</span>
                         </div>
-                        {/* <div id='upload_img'>
-                            <img src='./image/camera.png' alt=''></img>
-                            <span>이미지를 업로드 해주세요.</span>
-                        </div>
-                        <div id='upload_img'>
-                            <img src='./image/camera.png' alt=''></img>
-                            <span>이미지를 업로드 해주세요.</span>
-                        </div>
-                        <div id='upload_img'>
-                            <img src='./image/camera.png' alt=''></img>
-                            <span>이미지를 업로드 해주세요.</span>
-                        </div> */}
                     </Upload>
                 </Form.Item>
                 <Divider></Divider>
