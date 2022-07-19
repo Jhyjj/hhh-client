@@ -11,6 +11,7 @@ import Detailview from './Detail/Detailview';
 import Booking from './Booking/Booking';
 import Reservation from './Reservation/Reservation';
 import Sugso from './Sugso/Sugso';
+import Sugso2 from './Sugso/uploadtest';
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
         <Route path='/detail/:1' element={<Detailview/>} />
         <Route path='/booking' element={<Booking/>} />
         <Route path='/reser' element={<Reservation/>} />
-        <Route path='/room' element={<Sugso/>} />
+        {/* 숙소 등록 테스트 */}
+        <Route path='/room' element={<Sugso2/>} />
       </Routes>
       <Footer></Footer>
     </div>

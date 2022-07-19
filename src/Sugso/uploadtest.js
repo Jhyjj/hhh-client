@@ -1,3 +1,6 @@
+
+//숙소 등록 이미지 등록 테스트
+
 import React, { useState } from 'react';
 import { BackTop, Form, Divider, Input, InputNumber, Button, Upload } from 'antd';
 import 'antd/dist/antd.css';
@@ -7,7 +10,7 @@ import { AiOutlineArrowUp } from 'react-icons/ai';
 import axios from 'axios';
 
 
-const Sugso = () => {
+const Sugso2 = () => {
 
     const [formData, setFormData] = useState({
         rname: "",
@@ -20,6 +23,7 @@ const Sugso = () => {
         radd : "",
         sns : "",
         info : "",
+        imgurl : "" //초기 상태값 관리
     })
 
     const onChange=(e)=>{
@@ -27,6 +31,7 @@ const Sugso = () => {
         const {name, value} = e.target;
         setFormData({
             ...formData,
+            imgurl:imgurl,
             [name]:value
         })
 
@@ -43,29 +48,23 @@ const Sugso = () => {
         axios.post('http://localhost:3001/addroom',formData)
         .then(result=>{
             console.log(result);
+            console.log(formData);
+            alert('숙소등록이 완료되었습니다.')
+
         })
         .catch(e=>{
             console.log(e);
         })
     }
 
-    const onChangeImg = (info)=>{
-        if(info.file.status === "uploading"){
-            return;
-        }
-        if(info.file.status === "done"){
-            console.log(info.file);
-        }
-    }
 
-    
 
     //최대인원/최소인원 상태관리
-    const [ number, setNember ] = useState(2);
-    const [ number2, setNember2 ] = useState(2);
+    const [ number, setNumber ] = useState(2);
+    const [ number2, setNumber2 ] = useState(2);
     const onIncrease = (e) => {
         console.log('+1');
-        setNember(number + 1);
+        setNumber(number + 1);
         setFormData({
             ...formData,
             minp: number+1
@@ -73,7 +72,7 @@ const Sugso = () => {
     }
     const onDecrease = (e) => {
         console.log('-1');
-        setNember(number - 1);
+        setNumber(number - 1);
         setFormData({
             ...formData,
             minp: number-1
@@ -81,7 +80,7 @@ const Sugso = () => {
     }
     const onIncrease2 = (e) => {
         console.log('+1');
-        setNember2(number2 + 1);
+        setNumber2(number2 + 1);
         setFormData({
             ...formData,
             maxp: number+1
@@ -89,15 +88,38 @@ const Sugso = () => {
     }
     const onDecrease2 = (e) => {
         console.log('-1');
-        setNember2(number2 - 1);
+        setNumber2(number2 - 1);
         setFormData({
             ...formData,
             maxp: number-1
         })
     }
 
-    // 이미지 업로드 onchange 함수
-    
+     //이미지 경로 상태관리하기
+     const [imgurl, setImgurl] = useState(null);
+
+     //이미지 처리 함수
+     const onChangeImg2 = (info)=>{
+         //파일 업로드 중일때
+         if(info.file.status === 'uploading'){
+            console.log(info.fileList[0].name);
+            console.log(info);
+             return;
+         }
+         //파일 업로드 완료되었을때
+         if(info.file.status === 'done'){
+             const res = info.file.response;
+             const imgurl = res.imgurl;
+             setImgurl(imgurl);
+             console.log(res);
+             console.log(info.file);
+             setFormData({
+                 ...formData,
+                 imgurl: imgurl
+             })
+         }
+         
+     }
 
     return (
         <div id='sugso'>
@@ -108,24 +130,11 @@ const Sugso = () => {
             <Form onFinish={onSubmit}>
                 <Form.Item
                 label={<div className='upload-label'>숙소 사진</div>}>
-                    <Upload id='poto' onChange={onChangeImg} listType="picture" showUploadList={false} name="image"> 
+                    <Upload id='poto' onChange={onChangeImg2} listType="picture" showUploadList={false} name="image" action={'http://localhost:3001/upload'}> 
                         <div id='upload_img'>
                             <img src='./image/camera.png' alt=''></img>
                             <span>이미지를 업로드 해주세요.</span>
                         </div>
-                        {/* <div id='upload_img'>
-                            <img src='./image/camera.png' alt=''></img>
-                            <span>이미지를 업로드 해주세요.</span>
-                        </div>
-                        <div id='upload_img'>
-                            <img src='./image/camera.png' alt=''></img>
-                            <span>이미지를 업로드 해주세요.</span>
-                        </div>
-                        <div id='upload_img'>
-                            <img src='./image/camera.png' alt=''></img>
-                            <span>이미지를 업로드 해주세요.</span>
-                        </div> */}
-                        
                     </Upload>
                 </Form.Item>
                 <Divider></Divider>
@@ -214,4 +223,4 @@ const Sugso = () => {
     );
 };
 
-export default Sugso;
+export default Sugso2;
