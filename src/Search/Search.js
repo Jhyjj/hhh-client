@@ -1,5 +1,6 @@
 import axios from 'axios';
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 
@@ -18,14 +19,13 @@ const Search = () => {
     const onClick=(e)=>{
         console.log(e.target);
         const {name} = e.target;
-        setKeyword(name)
-        console.log(keyword);
+        setKeyword(name)       
     }
 
     function PrintList(){
         axios.get('http://localhost:3001/search')
         .then(result=>{
-            console.log(result);
+            
         })
         .catch(e=>{
             console.log(e);
@@ -56,7 +56,7 @@ const Search = () => {
                     <li className='likebtn' onClick={onClick}>숲</li>
                     <li className='likebtn' onClick={onClick}>도심</li>
                     <li className='likebtn' onClick={onClick}>시골</li>
-                    <li className='likebtn' onClick={PrintList}>모든 숙소보기</li>
+                    <Link to ='/searchResult'><li className='likebtn' onClick={PrintList}>모든 숙소보기</li></Link>
                 </ul>
             </form>
         </div>
