@@ -28,12 +28,13 @@ const GET_ROOM_ERROR = "GET_ROOM_ERROR";
 
 
 //액션생성함수 만들기
-export const getRooms = (id) => async dispatch => {
+export const getRooms = () => async dispatch => {
     dispatch({type:GET_ROOMS}) //요청 시작하기
     try{
         //여기서 검색결과 불러오기
-        const response = await axios.get('http://localhost:3001/getRooms')
-        const result = response.data.filter(room=>room.sns === id);
+        // const response = await axios.get('http://localhost:3001/getRooms')
+        const response = await axios.get('http://localhost:3001/search')
+        const result = response.data
         console.log(result);
         dispatch({type:GET_ROOMS_SUCCESS,result})
     }

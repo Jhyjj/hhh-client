@@ -12,6 +12,7 @@ import Booking from './Booking/Booking';
 import Reservation from './Reservation/Reservation';
 import Sugso from './Sugso/Sugso';
 import Sugso2 from './Sugso/uploadtest';
+import ResultListContainer from './Result/ResultListContainer';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         <Route path='/' element={<Main/>} />
         <Route path='/login' element={<Login />} />
         <Route path='/join' element={<Join />} />
-        <Route path='/searchResult' element={<Result/>} />
+        {/* <Route path='/searchResult' element={<Result/>} /> */}
+        <Route path='/searchResult' element={<ResultListContainer/>} />
         {/* 나중에 경로에 아이디로 바꿔주기★ */}
         <Route path='/detail/:1' element={<Detailview/>} />
         <Route path='/booking' element={<Booking/>} />

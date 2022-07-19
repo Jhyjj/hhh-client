@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React,{useState} from 'react';
 import './style.css';
+import {Link} from 'react-router-dom'
 
 
 const Search = () => {
@@ -30,6 +31,7 @@ const Search = () => {
         .catch(e=>{
             console.log(e);
         })
+        return <Link to='/searchResult'></Link>
     }
 
     //onSubmit 함수 만들기
@@ -40,6 +42,7 @@ const Search = () => {
         .then(result=>{
             console.log(result);
             console.log(keyword);
+
         })
         .catch(e=>{
             console.log(e)
