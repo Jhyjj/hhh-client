@@ -4,7 +4,7 @@ import axios from "axios";
 //초기값 지정
 const initialState = {
     rooms:{
-        loading:false,
+        loading : false,
         data : null,
         error : null
     },
@@ -12,12 +12,14 @@ const initialState = {
         loading: false,
         data : null,
         error : null
-    }
+    },
+    // key : "바다"
 }
 
 //액션타입 지정하기
 //검색한 키워드와 room이 가지고 있는 키워드가 같은 것들만 출력하기
 const GET_ROOMS = "GET_ROOMS";
+const CHANG_KEY = "CHANG_KEY";
 const GET_ROOMS_SUCCESS = "GET_ROOMS_SUCCESS";
 const GET_ROOMS_ERROR = "GET_ROOMS_ERROR";
 
@@ -32,10 +34,9 @@ export const getRooms = () => async dispatch => {
     dispatch({type:GET_ROOMS}) //요청 시작하기
     try{
         //여기서 검색결과 불러오기
-        // const response = await axios.get('http://localhost:3001/getRooms')
         const response = await axios.get('http://localhost:3001/search')
-        const result = response.data
-        console.log(result);
+        const result = response.data;
+        console.log(response)
         dispatch({type:GET_ROOMS_SUCCESS,result})
     }
     catch(e){
@@ -46,8 +47,13 @@ export const getRooms = () => async dispatch => {
 //하나만 조회하는 함수
 //좀있다 만들기..
 
+// const getSearchKeyword = (keyvalue) => ({
+//     type:CHANG_KEY,
+//     keyvalue
+// })
+
 //리듀서
-export default function searchRoom(state=initialState,action){
+export default function searchroom(state=initialState, action){
     switch(action.type){
         case GET_ROOMS:
             return{
@@ -75,6 +81,11 @@ export default function searchRoom(state=initialState,action){
                     data:null,
                     error:action.error
                 }
+            }
+        case CHANG_KEY:
+            return {
+                ...state,
+                key: action.keyvalue
             }
         default:
             return state;
