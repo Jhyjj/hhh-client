@@ -153,9 +153,9 @@
     }
 }
 .scroll_text {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.377);
     font-weight: bold;
-    border: 2px solid #fff;
+    border: 2px solid rgba(255, 255, 255, 0.377);
     border-radius: 50%;
     position: absolute;
     bottom: 0;
@@ -167,7 +167,7 @@
 .scroll_line {
     width: 2px;
     height: 25px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.377);
     position: absolute;
     bottom: 0;
     left: 50%;

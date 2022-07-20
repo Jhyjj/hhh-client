@@ -7,16 +7,26 @@
     display: flex;
     align-items: center;
 }
-#text {
-    width: 300px;
+#join_text div {
+    width: 200px;
     height: 500px;
-    background-color: #6667AB;
+    border-right: 2px solid #eee;
     color: #fff;
-    font-size: 35px;
+    font-size: 40px;
+    position: relative;
 }
-#text h1 span{
+#join_text div h1 {
+    color:#6667AB;
+    font-weight: bold;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 30px;
+    right: -90px;
+}
+#join_text h1 span{
     vertical-align: middle;
     font-size: 130px;
+    font-weight: 900;
 }
 
 .join_btn {
@@ -28,23 +38,21 @@
     font-size: 14px;
     margin-top: 30px;
 }
-#input {
+#join_input {
     width: 100%;
-    margin: 0 auto;
+    margin: 0 100px;
 }
-#input span {
+#join_input span {
     color: red;
     margin-right: 5px;
     vertical-align: middle;
 }
-input {
-    width: 50%;
+#join_input input {
     padding: 3px 10px;
     border: none;
     outline: none;
     border-right: 1px solid #6667AB;
     border-bottom: 1px solid #6667AB;
-    margin: 10px 0;
 }
 input::placeholder {
     color: #777;
@@ -58,13 +66,30 @@ input::placeholder {
     color: #fff;
     font-size: 12px;
     margin-left: 8px;
+    vertical-align: top;
 }
 
 
 /* 전화번호입력 칸 */
-.pinput {
-    width: 100px;
+.pinput input:nth-child(1) {
+    margin-right: 10px;
+}
+.pinput input:not(:nth-child(1)) {
     margin:0 10px;
-    
 }
 
+.add_input input{
+    margin-right: 10px;
+    width: 40%;
+}
+.no_input input{
+    width: 60%;
+}
+.postCode_btn {
+    background-color: #6667AB;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 5px 10px;
+    margin-top: 5px;
+}

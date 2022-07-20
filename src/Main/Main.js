@@ -10,9 +10,7 @@ SwiperCore.use([Navigation, Pagination, Autoplay])
 
 
 const Main = () => {
-    
     return (
-
     <div id='visual'>
       <Swiper
         spaceBetween={50} //슬라이드 여백
@@ -29,8 +27,6 @@ const Main = () => {
       </Swiper>
     
     </div>
-
-         
     );
 };
 

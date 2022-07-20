@@ -52,12 +52,12 @@ function login(){
 
     return (
         <div id='login'>
-            <div id='text'>
+            <div id='login_text'>
                 <div>
-                    <h1><span>L</span>ogin</h1>
+                    <h1><span>L</span>OGIN</h1>
                 </div>
             </div>
-            <div id='input'>
+            <div id='login_input'>
                 <form>
                     <Table>
                         <TableBody>

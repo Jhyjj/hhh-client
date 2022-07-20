@@ -7,19 +7,26 @@
     display: flex;
     align-items: center;
 }
-#text {
-    width: 300px;
+#login_text div {
+    width: 200px;
     height: 500px;
-    background-color: #6667AB;
+    border-right: 2px solid #eee;
     color: #fff;
-    font-size: 35px;
+    font-size: 40px;
+    position: relative;
 }
-#text div h1{
-    color:#fff;
+#login_text div h1{
+    color:#6667AB;
+    font-weight: bold;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 60px;
+    right: -120px;
 }
-#text h1 span{
+#login_text h1 span{
     vertical-align: middle;
-    font-size: 120px;
+    font-size: 130px;
+    font-weight: 900;
 }
 
 .login_btn {
@@ -31,21 +38,20 @@
     font-size: 14px;
     margin-top: 30px;
 }
-#input {
+#login_input {
     width: 100%;
-    margin: 0 auto;
+    margin: 0 100px;
 }
-#input span {
+#login_input span {
     color: red;
     margin-right: 5px;
     vertical-align: middle;
 }
-input {
-    width: 50%;
+#login_input input {
+    width: 70%;
     padding: 3px 10px;
     border: none;
     outline: none;
     border-right: 1px solid #6667AB;
     border-bottom: 1px solid #6667AB;
-    margin: 10px 0;
 }
