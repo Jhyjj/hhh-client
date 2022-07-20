@@ -32,6 +32,33 @@ a{
   justify-content: space-between;
   height: 30px;
 }
+/* 세션있을시 실행되는 아이들 */
+#header span{
+  position: absolute;
+  right:11%;
+  top:15%;
+  font-size: 18px;
+}
+#header button{
+  position: absolute;
+  right:0%;
+  top : 3%;
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  color: black;
+  background: #fff;
+  cursor: pointer;
+  margin-top: 5px;
+  font-size: 18px;
+}
+#header button:hover{
+  background-color: #ccc;
+    border-color: #ccc;
+    color: #fff;
+}
 
 /* footer */
 

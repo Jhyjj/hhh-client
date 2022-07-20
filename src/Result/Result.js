@@ -4,6 +4,7 @@ import Resultpage from './Resultpage';
 import ResultDetailpage from './ResultDetailpage';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRooms } from '../modules/rooms';
+import { useParams } from 'react-router-dom';
 
 
 const Result = () => {
@@ -14,20 +15,27 @@ const Result = () => {
     // 큰화면 보기(false) 안보기(true)
     let [id, setId] = useState(0); // 큰화면 화면이동용 ID
   useEffect(() => {
-    if(view){setId(0)}
-    else window.addEventListener("mousewheel",addid)},[id])
+  window.addEventListener("mousewheel",addid)},[id])
 // 스크롤이벤트시 뒤의 함수를 실행시킨다. id를 1씩 더해줌
  const addid = () => {
-    setId(id + 1)
-    console.log(data.length)
- }
+    if(data && data.length > id+1){
+    setId(id + 1);
+    } else {
+        setId(0);
+    }
+}
+// length는 값이 들어오기전에 불러오면 에러가발생함. &&함수로 먼저 실행해줘야함.
+// const {keyword} = useParams();
+// console.log(keyword);
 
+
+//검색값 받아오기
 
     const { data, loading, error } = useSelector(state => state.searchroom.rooms);
     const dispatch = useDispatch();
     // console.log(data[0])
-    useEffect(()=> {
-        dispatch(getRooms());
+    useEffect(()=> { 
+        dispatch(getRooms()) 
     },[dispatch])
     if(loading) return <div>로뒹</div>
     if(error) return <div>엘어</div>
