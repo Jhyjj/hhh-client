@@ -96,7 +96,7 @@ const Sugso2 = () => {
     }
 
      //이미지 경로 상태관리하기
-     const [imgurl, setImgurl] = useState(null);
+     const [imgurl, setImgurl] = useState(null); //배열로 변경해서 관리하기
 
      //이미지 처리 함수
      const onChangeImg2 = (info)=>{
@@ -110,7 +110,8 @@ const Sugso2 = () => {
          if(info.file.status === 'done'){
              const res = info.file.response;
              const imgurl = res.imgurl;
-             setImgurl(imgurl);
+             console.log(imgurl);
+             setImgurl(`http://localhost:3001/img/${imgurl}`);
              console.log(res);
              console.log(info.file);
              setFormData({

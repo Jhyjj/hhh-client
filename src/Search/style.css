@@ -9,7 +9,7 @@
     transition: 0.5s;
 }
 
-#Search input{
+#Search .searchinput{
     width: 90%;
     height: 50px;
     border: none;
@@ -47,6 +47,9 @@ ul{
     border: 1px solid #fff;
     border-radius: 10px;
     color: black;
+    background: #fff;
+    cursor: pointer;
+    margin-top: 5px;
 }
 
 .likebtn:hover{

@@ -23,7 +23,7 @@ const CHANG_KEY = "CHANG_KEY";
 const GET_ROOMS_SUCCESS = "GET_ROOMS_SUCCESS";
 const GET_ROOMS_ERROR = "GET_ROOMS_ERROR";
 
-//아이디를 눌러서 해당 room만 조회하기
+//아이디를 눌러서 해당 room만 조회하기 -> 상세페이지 조회
 const GET_ROOM = "GET_ROOM";
 const GET_ROOM_SUCCESS = "GET_ROOM_SUCCESS";
 const GET_ROOM_ERROR = "GET_ROOM_ERROR";
@@ -57,10 +57,17 @@ export const getKeyword = (keyword) => async dispatch => {
     }
 }
 
-// const getSearchKeyword = (keyvalue) => ({
-//     type:CHANG_KEY,
-//     keyvalue
-// })
+export const getRoom = (id) => async dispatch => {
+    dispatch({type:GET_ROOM})
+    try{
+        const res = await axios.get(`http://localhost:3001/detail/${id}`)
+        const result = res.data;
+        dispatch({type:GET_ROOM_SUCCESS,result})
+    }
+    catch(e){
+        dispatch({type:GET_ROOM_ERROR,error:e})
+    }
+}
 
 
 //리듀서
@@ -98,6 +105,33 @@ export default function searchroom(state=initialState, action){
                 ...state,
                 key: action.keyvalue
             }
+            case GET_ROOM:
+                return{
+                    ...state,
+                    room:{
+                        loading:true,
+                        data:null,
+                        error:null
+                    }
+                }
+            case GET_ROOM_SUCCESS:
+                return{
+                    ...state,
+                    room:{
+                        loading:false,
+                        data:action.result,
+                        error:null
+                    }
+                }
+            case GET_ROOM_ERROR:
+                return{
+                    ...state,
+                    room:{
+                        loading:false,
+                        data:null,
+                        error:action.error
+                    }
+                }
         default:
             return state;
     }

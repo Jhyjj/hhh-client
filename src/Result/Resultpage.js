@@ -9,7 +9,7 @@ const Resultpage = ({rooms,onClick}) => {
                 <h1 className='text_h1'>Do you have a favorite place to stay?</h1>
                 <ul>
                     {rooms.map(room=>(
-                    <Link to={`/detail/:${room.no}`}>
+                    <Link to={`/detail/${room.no}`}>
                         <li key={room.no}>
                             <div className='imgbox one'>
                                 <img src={room.imgurl} alt=""/>

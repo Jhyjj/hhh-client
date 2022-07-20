@@ -8,10 +8,10 @@ const ResultList = ({rooms}) => {
                 <h2>검색 결과입니다.</h2>
                 <ul>
                     {rooms.map(room=>(
-                    <Link to={`/detail/:${room.no}`}>
+                    <Link to={`/detail/${room.no}`}>
                         <li key={room.no}>
                             <div className='imgbox'>
-                            <img src={`/image/${room.imgurl}`} alt=""/>
+                            <img src={`${room.imgurl}`} alt=""/>
                             </div> 
                             <div className='textbox'>
                                 <p>{room.rname}</p>

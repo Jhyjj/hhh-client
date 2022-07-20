@@ -25,7 +25,7 @@ function App() {
         <Route path='/searchResult' element={<Result/>} />
         <Route path='/searchResultk/:keyword' element={<ResultListContainer/>} />
         {/* 나중에 경로에 아이디로 바꿔주기★ */}
-        <Route path='/detail/:1' element={<Detailview/>} />
+        <Route path='/detail/:id' element={<Detailview/>} />
         <Route path='/booking' element={<Booking/>} />
         <Route path='/reser' element={<Reservation/>} />
         {/* 숙소 등록 테스트 */}
