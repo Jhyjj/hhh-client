@@ -25,11 +25,7 @@ const Search = () => {
     }
 
     function PrintList(){
-<<<<<<< HEAD
-        document.querySelector('#Search').classList.toggle('popup');
-=======
         document.querySelector('#Search').classList.toggle('popup'); //검색결과창으로 이동할때 검색팝업 닫아주기
->>>>>>> 85eeac43eb8af9a1b38645722fbafbc242650380
         axios.get('http://localhost:3001/search')
         .then(result=>{
             
