@@ -20,6 +20,7 @@ const Result = () => {
  const addid = () => {
     setId(id + 1)
     console.log(data.length)
+    console.log(id);
  }
 
 
