@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div id="footer">
             <div id='left'>
-                <h2><img src="/image/logo.png" alt=''/></h2>
+                <h2><a href='/'><img src="/image/logo.png" alt=''/></a></h2>
                 <p>copyright(c) hhh all right reserved.</p>
             </div>
             <div id='right'>
