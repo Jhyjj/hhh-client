@@ -4,14 +4,26 @@ import Search from '../Search/Search';
 
 const Header = () => {
 
+    // 세션을 모두 삭제하고 처음 페이지로 이동
+    const onSubmit = (e)=> {
+        e.preventDefault();
+        console.log(sessionStorage.getItem("user_id"))
+        sessionStorage.clear();
+        document.location.href = '/'
+    }
+    
     //검색창 클릭하면 나오게 하기
     function searchPopUp(){
         console.log('검색창 popup 띄우기');
         document.querySelector('#Search').classList.toggle('popup');
     }
+    
     return (
         <div id="header">
             <h1><img src="/image/logo.png" alt=''/></h1>
+            {/* 세션이 있는경우에만 나오도록 한다. */}
+           {sessionStorage.getItem("user_id") && (<span> {sessionStorage.getItem("user_id")}님 환영합니다.</span>)}
+           {sessionStorage.getItem("user_id") && (<button onClick={onSubmit}> 로그아웃 </button>)}
             <nav>
                 <ul>
                     <li><Link to='/'>Home</Link></li>
