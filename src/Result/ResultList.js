@@ -11,7 +11,7 @@ const ResultList = ({rooms}) => {
                     <Link to={`/detail/:${room.no}`}>
                         <li key={room.no}>
                             <div className='imgbox'>
-                            <img src={`/image/${room.imgurl}`} alt=""/>
+                            <img src={`${room.imgurl}`} alt=""/>
                             </div> 
                             <div className='textbox'>
                                 <p>{room.rname}</p>
