@@ -44,13 +44,24 @@ export const getRooms = () => async dispatch => {
     }
 }
 
-//하나만 조회하는 함수
-//좀있다 만들기..
+//input에 입력한 값으로 검색하는 함수 만들기~
+export const getKeyword = (keyword) => async dispatch => {
+    dispatch({type:GET_ROOMS}) //요청 시작하기~!
+    try{
+        const response = await axios.get(`http://localhost:3001/searchKeyword/${keyword}`)
+        const result = response.data;
+        dispatch({type:GET_ROOMS_SUCCESS, result})
+    }
+    catch(e){
+        dispatch({type:GET_ROOMS_ERROR, error:e})
+    }
+}
 
 // const getSearchKeyword = (keyvalue) => ({
 //     type:CHANG_KEY,
 //     keyvalue
 // })
+
 
 //리듀서
 export default function searchroom(state=initialState, action){

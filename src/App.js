@@ -23,7 +23,11 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/join' element={<Join />} />
         <Route path='/searchResult' element={<Result/>} />
+<<<<<<< HEAD
         {/* <Route path='/searchResult' element={<ResultListContainer/>} /> */}
+=======
+        <Route path='/searchResultk/:keyword' element={<ResultListContainer/>} />
+>>>>>>> 85eeac43eb8af9a1b38645722fbafbc242650380
         {/* 나중에 경로에 아이디로 바꿔주기★ */}
         <Route path='/detail/:1' element={<Detailview/>} />
         <Route path='/booking' element={<Booking/>} />
