@@ -15,14 +15,11 @@ const Result = () => {
     // 큰화면 보기(false) 안보기(true)
     let [id, setId] = useState(0); // 큰화면 화면이동용 ID
   useEffect(() => {
-    view ? setId(0) : window.addEventListener("mousewheel",addid)},[id])
+  window.addEventListener("mousewheel",addid)},[id])
 // 스크롤이벤트시 뒤의 함수를 실행시킨다. id를 1씩 더해줌
  const addid = () => {
     if(data && data.length > id+1){
     setId(id + 1);
-    console.log(id)
-    console.log(data.length)
-
     } else {
         setId(0);
     }

@@ -73,36 +73,36 @@ const Join = () => {
 
     return (
         <div id="join">
-            <div id='text'>
+            <div id='join_text'>
                 <div>
-                    <h1><span>J</span>oin</h1>
+                    <h1><span>J</span>OIN</h1>
                 </div>
             </div>
-            <div id='input'>
+            <div id='join_input'>
                 <form onSubmit={onSubmit}>
                     <Table>
                         <TableBody>
                             <TableRow>
                                 <TableCell><span>*</span>NAME</TableCell>
-                                <TableCell>
+                                <TableCell className='no_input'>
                                     <input name="a_name" onChange={onChange}/>
                                 </TableCell>
                             </TableRow>
                             <TableRow>
                                 <TableCell><span>*</span>ID</TableCell>
-                                <TableCell>
+                                <TableCell className='no_input'>
                                     <input name="a_id" onChange={onChange}/>
                                 </TableCell>
                             </TableRow>
                             <TableRow>
                                 <TableCell><span>*</span>PASSWORD</TableCell>
-                                <TableCell>
+                                <TableCell className='no_input'>
                                     <input name="a_pw" type="password" onChange={onChange}/>
                                 </TableCell>
                             </TableRow>
                             <TableRow>
                                 <TableCell><span>*</span>PHONE</TableCell>
-                                <TableCell>
+                                <TableCell className="pinput" >
                                     <input className="pinput" name="a_p1" type="text" onChange={onChange}/>─
                                     <input className="pinput" name="a_p2" type="text" onChange={onChange}/>─
                                     <input className="pinput" name="a_p3" type="text" onChange={onChange}/>
@@ -110,7 +110,7 @@ const Join = () => {
                             </TableRow>
                             <TableRow>
                                 <TableCell><span>*</span>ADDRESS</TableCell>
-                                <TableCell>
+                                <TableCell className='add_input'>
                                     <input className='add' placeholder='주소' name="a_add1" value={formData.a_add1} onChange={onChange}/>
                                     <input className='add' placeholder='상세주소' name="a_add2" onChange={onChange}/>
                                     <button className='add_btn' type='button' onClick={openPostCode}>우편번호검색</button>
