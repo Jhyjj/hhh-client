@@ -5,22 +5,23 @@ const Resultpage = ({rooms,onClick}) => {
     
     return (
         <>
-                 <span className='toggle' onClick={onClick}>크게보기</span>
+                <span className='toggle' onClick={onClick}>Big<br></br>Photo</span>
+                <h1 className='text_h1'>Do you have a favorite place to stay?</h1>
                 <ul>
                     {rooms.map(room=>(
                     <Link to={`/detail/:${room.no}`}>
                         <li key={room.no}>
-                            <div className='imgbox'>
-                            <img src={room.imgurl} alt=""/>
+                            <div className='imgbox one'>
+                                <img src={room.imgurl} alt=""/>
                             </div> 
                             <div className='textbox'>
-                                <p>{room.rname}</p>
-                                <p>{room.price}</p>
+                                <p className='text_name'>{room.rname}</p>
+                                <p className='text_price'>{room.price}</p>
                             </div>
                         </li>
                     </Link>
                     ))}
-                    </ul>
+                </ul>
         </>
     );
 };

@@ -23,6 +23,7 @@ const Search = () => {
     }
 
     function PrintList(){
+        document.querySelector('#Search').classList.toggle('popup');
         axios.get('http://localhost:3001/search')
         .then(result=>{
             

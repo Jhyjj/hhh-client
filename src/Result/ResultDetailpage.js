@@ -1,10 +1,6 @@
 import React from 'react';
 import { useEffect, useState, useRef } from 'react';
 
-
-
-
-
 const ResultDetailpage = ({data,onClick,id}) => {
     const homeRef = useRef();
     // div 선택
@@ -21,16 +17,21 @@ const ResultDetailpage = ({data,onClick,id}) => {
       };
       //   scrollIntoView - 해당 div로 이동시켜줌
     return (
-           <div className='dark_imgbox' ref={homeRef}>
-                <span onClick={onClick}>작게보기</span>
-                    <div className='desc_img'>
-                    <img src={data[id].imgurl} alt=""/>            
-                    <div className='textboxm'>
-                           <p>Name : {data[id].rname}</p>
-                            <p>Price : {data[id].price}</p>    
-                </div>
-                </div>
-               </div> 
+          <div className='dark_imgbox' ref={homeRef}>
+              <span onClick={onClick} className='span1'></span>
+              <span onClick={onClick} className='span2'></span>
+              <div className='desc_img'>
+                  <img src={data[id].imgurl} alt=""/>            
+                  <div className='textboxm'>
+                      <p>✓ NAME</p>
+                      <p>{data[id].rname}</p>
+                      <p>✓ PRICE</p>    
+                      <p>{data[id].price}</p>  
+                  </div>
+              </div>
+              <div className='scroll_text'>scroll</div>
+              <div className='scroll_line'></div>
+          </div> 
      
     );
 };
