@@ -65,6 +65,7 @@ const Join = () => {
         axios.post('http://localhost:3001/addjoin',formData)
         .then(result=>{
             console.log(result);
+            document.location.href = '/'
         })
         .catch(e=>{
             console.log(e);

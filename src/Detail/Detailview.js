@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './style.css';
-import { Link } from '@mui/material';
+import {Link} from 'react-router-dom';
 import {Swiper, SwiperSlide} from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Autoplay} from "swiper";
 import "swiper/css"; //basic
@@ -91,7 +91,8 @@ const Detailview = () => {
                         </tr> */}
                         <tr>
                             <th colSpan={2}>
-                            <Link to="/reser"><div>예약하기</div></Link>
+                            {sessionStorage.getItem("user_id") ? <Link to='/reser' state={data[0]}><div className='curser'>예약하기</div></Link> : <Link to='/login'><div className='curser'>로그인</div></Link>}
+
                             </th>
                         </tr>
                     </table>

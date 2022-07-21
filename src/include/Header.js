@@ -21,7 +21,6 @@ const Header = () => {
     return (
         <div id="header">
             <h1><a href='/'><img src="/image/logo.png" alt=''/></a></h1>
-            <h1><img src="/image/logo.png" alt=''/></h1>
             {/* 세션이 있는경우에만 나오도록 한다. */}
            {sessionStorage.getItem("user_id") && (<span> {sessionStorage.getItem("user_id")}님 환영합니다.</span>)}
            {sessionStorage.getItem("user_id") && (<button onClick={onSubmit}> 로그아웃 </button>)}
