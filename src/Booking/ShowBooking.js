@@ -1,9 +1,9 @@
 import React from 'react';
 
 const ShowBooking = ({data}) => {
-    console.log(data.rows)
-    const book = data.rows
-
+    console.log(data)
+    const book = data
+    // console.log(book)
     return (
         
        <>
@@ -42,8 +42,10 @@ const ShowBooking = ({data}) => {
 
                           </div>
      
-    </div>))}
+    </div>
+    ))}
     </>
+    
       );
     
 };
