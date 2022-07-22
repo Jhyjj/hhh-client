@@ -110,7 +110,7 @@ const Sugso2 = () => {
              const res2 = info.fileList;
              console.log(res2);
             const imgs = []; //이미지 리스트 배열
-            imgs.push(res2.map(data=>`https://hhh-server.herokuapp.com/img/${data.name}`))
+            imgs.push(res2.map(data=>`${data.name}`))
             setImgurl(imgs.toString()) //배열을 다시 문자열로 변경
             console.log(imgurl);
              setFormData({

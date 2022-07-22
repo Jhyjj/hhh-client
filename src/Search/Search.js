@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React,{useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import { API_URL } from '../config/amuguna';
 import { useNavigate } from 'react-router-dom';
 import './style.css';
 
@@ -26,7 +27,7 @@ const Search = () => {
 
     function PrintList(){
         document.querySelector('#Search').classList.toggle('popup'); //검색결과창으로 이동할때 검색팝업 닫아주기
-        axios.get('https://hhh-server.herokuapp.com/search')
+        axios.get(`${API_URL}/search`)
         .then(result=>{
             
         })
