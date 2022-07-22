@@ -1,8 +1,9 @@
 import React from 'react';
 
 const ShowBooking = ({data}) => {
-    console.log(data.rows)
-    const book = data.rows
+    console.log(data)
+    const book = data
+    console.log(book)
 
     return (
         
@@ -11,7 +12,7 @@ const ShowBooking = ({data}) => {
         <div id="Booking">
         <div className='left_img'>
                           <img src={`${book.imgurl}`} alt=''></img></div><div className='right_text'>
-                              <table class='left'>
+                              <table classNa='left'>
                                   <tr>
                                       <th>Name</th>
                                       <td>{book.rname}</td>

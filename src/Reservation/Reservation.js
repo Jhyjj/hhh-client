@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 
+
 const Reservation = () => {
 
     const location = useLocation();
@@ -80,7 +81,8 @@ const onSubmit = (e)=>{
             console.log(e);
         })
     }
-
+    const today = new Date();
+    const disabledDays = [new Date(2022,6,30),new Date(2022,6,29),new Date(2022,6,25)]
     return (
    
         <div class="ReserWrap">
@@ -96,8 +98,12 @@ const onSubmit = (e)=>{
                     onChange={onRangeChange}
                     editableDateInputs={true}
                     moveRangeOnFirstSelection={false}
-                    // disabledDays={disabledDays}
+                    preventSnapRefocus={true}
                     ranges={[state]}
+                    // minDate={today} //오늘보다 이전날짜 비활성화
+                    // disabledDays={()=>false}
+                    disabledDates={disabledDays} //날짜 배열로 만들어서 해당날짜는 비활성화
+                    
                   />      
                 </div>
 

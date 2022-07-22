@@ -96,7 +96,7 @@ const Sugso2 = () => {
     }
 
      //이미지 경로 상태관리하기
-     const [imgurl, setImgurl] = useState(null); //배열로 변경해서 관리하기
+     const [imgurl, setImgurl] = useState([]); //배열로 변경해서 관리하기
 
      //이미지 처리 함수
      const onChangeImg2 = (info)=>{
@@ -109,11 +109,12 @@ const Sugso2 = () => {
          //파일 업로드 완료되었을때
          if(info.file.status === 'done'){
              const res = info.file.response;
+             const res2 = info.fileList[0].response;
+             console.log(res);
+             console.log(res2);
              const imgurl = res.imgurl;
              console.log(imgurl);
              setImgurl(`http://localhost:3001/img/${imgurl}`);
-             console.log(res);
-             console.log(info.file);
              setFormData({
                  ...formData,
                  imgurl: imgurl
@@ -131,7 +132,7 @@ const Sugso2 = () => {
             <Form onFinish={onSubmit}>
                 <Form.Item
                 label={<div className='upload-label'>숙소 사진</div>}>
-                    <Upload id='poto' onChange={onChangeImg2} listType="picture" showUploadList={false} name="image" action={'http://localhost:3001/upload'}> 
+                    <Upload id='poto' onChange={onChangeImg2} listType="picture" showUploadList={false} name="image" action={'http://localhost:3001/upload'} multiple> 
                         <div id='upload_img'>
                             <img src='./image/camera.png' alt=''></img>
                             <span>이미지를 업로드 해주세요.</span>
