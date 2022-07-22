@@ -67,7 +67,7 @@ const Detailview = () => {
                         </tr>
                         <tr>
                             <th>금액<br/>(비성수기/성수기)</th>
-                            <td>krw {data[0].price}/{data[0].price*1.5}</td>
+                            <td>krw {data[0].price}/{parseInt(data[0].price.replace(/,/gi,''))*1.5}</td>
                         </tr>
                         <tr>
                             <th>체크인/체크아웃</th>
