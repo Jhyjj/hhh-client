@@ -10,6 +10,7 @@ import Test2 from './test2';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRoom } from '../modules/rooms';
+import { API_URL } from '../config/amuguna';
 
 
 
@@ -21,7 +22,9 @@ const Detailview = () => {
     const {id} = useParams();
     const {data,loading,error} = useSelector(state=>state.searchroom.room);
     var imgs = [];
-    imgs = data ? data[0].imgurl.split(",") : ""
+     data && data.map(data=>(
+        imgs = data.imgurl.split(",") 
+    )) 
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(getRoom(id))
@@ -42,7 +45,7 @@ const Detailview = () => {
                     loop={true}
                     >
                     {imgs.map(imgs=>(
-                    <SwiperSlide><img src={`${imgs}`} alt=""/></SwiperSlide>
+                    <SwiperSlide><img src={`${API_URL}/img/${imgs}`} alt=""/></SwiperSlide>
 
                     )) }
                     </Swiper>

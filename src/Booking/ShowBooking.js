@@ -1,4 +1,5 @@
 import React from 'react';
+import { API_URL } from '../config/amuguna';
 
 const ShowBooking = ({data}) => {
     // console.log(data)
@@ -21,7 +22,7 @@ const ShowBooking = ({data}) => {
        {book.map(book=>(
         <div id="Booking">
         <div className='left_img'>
-                          <img src={`${book.imgurl}`} alt=''></img></div><div className='right_text'>
+                          <img src={`${API_URL}/img/${book.imgurl}`} alt=''></img></div><div className='right_text'>
                               <table className='left'>
                                   <tr>
                                       <th>Name</th>

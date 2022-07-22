@@ -190,7 +190,7 @@ const disabledDays = [
             
                 <p>객실 예약</p>
         <div id="Reservation">
-            <div className="reser_left_img"><img src={`${img[0][0]}`} alt="" /></div>
+            <div className="reser_left_img"><img src={`${API_URL}/img/${img[0][0]}`} alt="" /></div>
             <form onSubmit={onSubmit}>
             <div className="right">
                 예약일지정
