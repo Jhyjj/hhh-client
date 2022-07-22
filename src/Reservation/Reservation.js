@@ -86,7 +86,7 @@ const onSubmit = (e)=>{
             insertbooking();
     }
     function insertbooking(){
-        axios.post('http://localhost:3001/addbooking',formData)
+        axios.post('https://hhh-server.herokuapp.com/addbooking',formData)
         .then(result=>{
             // console.log(result);
             document.location.href = '/Booking'

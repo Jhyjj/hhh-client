@@ -25,7 +25,7 @@ const onSubmit =(e)=>{
 }
 
 function login(){
-    axios.post('http://localhost:3001/member',formData)
+    axios.post('https://hhh-server.herokuapp.com/member',formData)
     .then(result=>{
         const {id, pw} = result.data
         console.log(pw)

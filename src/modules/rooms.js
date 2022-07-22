@@ -34,7 +34,7 @@ export const getRooms = () => async dispatch => {
     dispatch({type:GET_ROOMS}) //요청 시작하기
     try{
         //여기서 검색결과 불러오기
-        const response = await axios.get('http://localhost:3001/search')
+        const response = await axios.get('https://hhh-server.herokuapp.com/search')
         const result = response.data;
         console.log(response)
         dispatch({type:GET_ROOMS_SUCCESS,result})
@@ -48,7 +48,7 @@ export const getRooms = () => async dispatch => {
 export const getKeyword = (keyword) => async dispatch => {
     dispatch({type:GET_ROOMS}) //요청 시작하기~!
     try{
-        const response = await axios.get(`http://localhost:3001/searchKeyword/${keyword}`)
+        const response = await axios.get(`https://hhh-server.herokuapp.com/searchKeyword/${keyword}`)
         const result = response.data;
         dispatch({type:GET_ROOMS_SUCCESS, result})
     }
@@ -60,7 +60,7 @@ export const getKeyword = (keyword) => async dispatch => {
 export const getRoom = (id) => async dispatch => {
     dispatch({type:GET_ROOM})
     try{
-        const res = await axios.get(`http://localhost:3001/detail/${id}`)
+        const res = await axios.get(`https://hhh-server.herokuapp.com/detail/${id}`)
         const result = res.data;
         dispatch({type:GET_ROOM_SUCCESS,result})
     }

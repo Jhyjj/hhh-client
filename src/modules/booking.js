@@ -21,7 +21,7 @@ const GET_BOOKING_ERROR = "GET_BOOKING_ERROR";
 export const getBook = (id) => async dispatch => {
     dispatch({type:GET_BOOKING})
     try{
-        const res = await axios.get(`http://localhost:3001/booking/${id}`)
+        const res = await axios.get(`https://hhh-server.herokuapp.com/booking/${id}`)
         const result = res.data;
         dispatch({type:GET_BOOKING_SUCCESS,result})
     }
@@ -33,7 +33,7 @@ export const getBook = (id) => async dispatch => {
 export const getdate = (rooms) => async dispatch => {
     dispatch({type:GET_BOOKING})
     try{
-        const res = await axios.get(`http://localhost:3001/bookdate/${rooms}`)
+        const res = await axios.get(`https://hhh-server.herokuapp.com/bookdate/${rooms}`)
         const result = res.data;
         dispatch({type:GET_BOOKING_SUCCESS,result})
     }

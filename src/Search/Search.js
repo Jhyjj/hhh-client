@@ -26,7 +26,7 @@ const Search = () => {
 
     function PrintList(){
         document.querySelector('#Search').classList.toggle('popup'); //검색결과창으로 이동할때 검색팝업 닫아주기
-        axios.get('http://localhost:3001/search')
+        axios.get('https://hhh-server.herokuapp.com/search')
         .then(result=>{
             
         })

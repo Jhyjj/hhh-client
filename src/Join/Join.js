@@ -62,7 +62,7 @@ const Join = () => {
         }
     
     function insertMembers(){
-        axios.post('http://localhost:3001/addjoin',formData)
+        axios.post('https://hhh-server.herokuapp.com/addjoin',formData)
         .then(result=>{
             console.log(result);
             document.location.href = '/'
