@@ -30,6 +30,18 @@ export const getBook = (id) => async dispatch => {
     }
 }
 
+export const getdate = (rooms) => async dispatch => {
+    dispatch({type:GET_BOOKING})
+    try{
+        const res = await axios.get(`http://localhost:3001/bookdate/${rooms}`)
+        const result = res.data;
+        dispatch({type:GET_BOOKING_SUCCESS,result})
+    }
+    catch(e){
+        dispatch({type:GET_BOOKING_ERROR,error:e})
+    }
+}
+
 
 //리듀서
 export default function booking(state=initialState, action){

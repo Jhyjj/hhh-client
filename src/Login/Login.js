@@ -43,7 +43,6 @@ function login(){
             document.location.href = '/'
         // 작업 완료 되면 페이지 이동(새로고침)
         }
-        
     })
     .catch(e=>{
         console.log(e);

@@ -4,17 +4,14 @@ import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main style file 
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { useLocation } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-import { getdate } from '../modules/booking';
 
 
 const Reservation = () => {
 
-
     const location = useLocation();
     const roomd = location.state;
-    // console.log(roomd.rname);
+    console.log(roomd.rname);
 
 const [state, setState] = useState({
     startDate:new Date(),
@@ -68,139 +65,41 @@ const [formData, setFormData] = useState({
             [name]:value
     })
 };
-
-
-const {data,loading,error} = useSelector(state=>state.booking.book); 
-const dispatch = useDispatch();
-useEffect(()=>{
-    dispatch(getdate(roomd.rname))
-},[dispatch])
-    
 const onSubmit = (e)=>{
     e.preventDefault();
-    // console.log(formData);
+    console.log(formData);
             insertbooking();
     }
     function insertbooking(){
         axios.post('http://localhost:3001/addbooking',formData)
         .then(result=>{
-            // console.log(result);
+            console.log(result);
             document.location.href = '/Booking'
         })
         .catch(e=>{
             console.log(e);
         })
     }
-
-    // const minimumDate = new Date(2022,5,10);
-    // const maximumDate = new Date(2022,9,10);
-    if(loading) return <div>조금만 기다려주세요..🤔</div>
-    if(error) return <div>에러발생.. 관리자에게 문의해주세요</div>
-    if(!data) return <div>데이터 받아오지 못함..</div>
-    // console.log(data)
-    const sdata = []
-    const edata =[]
-    const ssdata = []
-    const eedata =[]
-    let answer1 = []
-    // 지옥의 변수선언
-    data.map(data=>(
-   sdata.push(data.rsdate.substring(0,10)),
-   edata.push(data.edate.substring(0,10))
-))
-        // 2022-07-20 으로 받아옴
-        sdata.map(data=>(
-            ssdata.push( data.replace(/-/gi,','))
-        ))
-        edata.map(data=>(
-            eedata.push( data.replace(/-/gi,','))
-        ))
-            // 2022,07,20 으로 변환
-
-            edata.length = 0;
-            sdata.length = 0;
-     
-ssdata.map(data=>(
-    sdata.push(data.substring(8,10))
-    ))            
-eedata.map(data=>(
-   edata.push(data.substring(8,10))
-))
-// 뒤에 숫자 2개만 가져옴
-
-function solution(x,y){
-    let answer = [];
-    for(let l=0; l<y.length; l++){
-        var arr = []
-        for(let i=Number(x[l])+1; i<Number(y[l])+3; i++){  
-                arr.push(i)
-                console.log(i)
-        }
-        answer[l] = arr;
-    }
-    return answer;
-}
-answer1 = solution(sdata,edata)
-// 사이값과 해당값을 모두 가져옴
-
-edata.length = 0;
-sdata.length = 0;
-eedata.length = 0;
-ssdata.length = 0;
-//다시초기화
-
-data.map(data=>(
-    sdata.push(data.rsdate.substring(0,8)),
-    edata.push(data.edate.substring(0,8))
- ))
-// 2022-07- 까지만 받아옴.
-
- sdata.map(data=>(
-    ssdata.push( data.replace(/-/gi,','))
-))
-edata.map(data=>(
-    eedata.push( data.replace(/-/gi,','))
-))
-// 2022,07, 으로 만들어줌
-
-
-var newArr = [] 
-for(let l=0; l<sdata.length; l++){
-    for(let i=0; i<answer1[l].length; i++){  
-            newArr.push(ssdata[l]+answer1[l][i])
-    }
-}
-// push로 들어갈때 ,를제외한 숫자만 들어가므로 2022,07, 이 들어있는 sdata길이만큼 우선 반복
-// 그 안에 배열속 배열인 answer1 을 더해준다. 2022,07, 뒤에 answer값인 18,19,20 을 3번 더해줌 
-
-const disabledDays = [
-        ]
-        for(let i=0; i<newArr.length-1; i++){
-            disabledDays.push(new Date(newArr[i]))
-        }
-// 날자에 값을 삽입해줌
+    const disabledDays = [
+        { from: new Date(2022,7,18), to: new Date(2022,7,29) }
+      ];
     return (
    
         <div class="ReserWrap">
             
                 <p>객실 예약</p>
         <div id="Reservation">
-            <div className="reser_left_img"><img src={roomd.imgurl} alt="" /></div>
+            <div class="reser_left_img"><img src={roomd.imgurl} alt="" /></div>
             <form onSubmit={onSubmit}>
-            <div className="right">
+            <div class="right">
                 예약일지정
                 <div class="calendar">
-                <DateRange 
+                  <DateRange 
                     onChange={onRangeChange}
-                    editableDateInputs={true}
-                    moveRangeOnFirstSelection={false}
-                    preventSnapRefocus={false}
+                    // editableDateInputs={true}
+                    // moveRangeOnFirstSelection={false}
                     ranges={[state]}
-                    // minDate={minimumDate}
-                    // maxDate={maximumDate}
-                    disabledDates={disabledDays}
-                    
-                  />       
+                  />      
                 </div>
 
                 <div class="input">
