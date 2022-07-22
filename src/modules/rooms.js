@@ -1,5 +1,6 @@
 
 import axios from "axios";
+import { API_URL } from "../config/amuguna";
 
 //초기값 지정
 const initialState = {
@@ -34,7 +35,7 @@ export const getRooms = () => async dispatch => {
     dispatch({type:GET_ROOMS}) //요청 시작하기
     try{
         //여기서 검색결과 불러오기
-        const response = await axios.get('https://hhh-server.herokuapp.com/search')
+        const response = await axios.get(`${API_URL}/search`)
         const result = response.data;
         console.log(response)
         dispatch({type:GET_ROOMS_SUCCESS,result})
@@ -48,7 +49,7 @@ export const getRooms = () => async dispatch => {
 export const getKeyword = (keyword) => async dispatch => {
     dispatch({type:GET_ROOMS}) //요청 시작하기~!
     try{
-        const response = await axios.get(`https://hhh-server.herokuapp.com/searchKeyword/${keyword}`)
+        const response = await axios.get(`${API_URL}/searchKeyword/${keyword}`)
         const result = response.data;
         dispatch({type:GET_ROOMS_SUCCESS, result})
     }
@@ -60,7 +61,7 @@ export const getKeyword = (keyword) => async dispatch => {
 export const getRoom = (id) => async dispatch => {
     dispatch({type:GET_ROOM})
     try{
-        const res = await axios.get(`https://hhh-server.herokuapp.com/detail/${id}`)
+        const res = await axios.get(`${API_URL}/detail/${id}`)
         const result = res.data;
         dispatch({type:GET_ROOM_SUCCESS,result})
     }

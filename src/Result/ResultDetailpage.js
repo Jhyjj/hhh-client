@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect, useState, useRef } from 'react';
+import { API_URL } from '../config/amuguna';
 
 const ResultDetailpage = ({data,onClick,id}) => {
     const homeRef = useRef();
@@ -22,7 +23,7 @@ const ResultDetailpage = ({data,onClick,id}) => {
               <span onClick={onClick} className='span1'></span>
               <span onClick={onClick} className='span2'></span>
               <div className='desc_img'>
-                  <img src={data[id].imgurl ? data[id].imgurl : data[0].imgurl} alt=""/>            
+                  <img src={`${API_URL}/img/${data[id].imgurl ? data[id].imgurl : data[0].imgurl}`} alt=""/>            
                   <div className='textboxm'>
                       <p>✓ NAME</p>
                       <p>{data[id].rname ? data[id].rname : data[0].rname}</p>

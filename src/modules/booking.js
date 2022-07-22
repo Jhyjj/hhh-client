@@ -1,5 +1,6 @@
 
 import axios from "axios";
+import { API_URL } from "../config/amuguna";
 
 //초기값 지정
 const initialState = {
@@ -21,7 +22,7 @@ const GET_BOOKING_ERROR = "GET_BOOKING_ERROR";
 export const getBook = (id) => async dispatch => {
     dispatch({type:GET_BOOKING})
     try{
-        const res = await axios.get(`https://hhh-server.herokuapp.com/booking/${id}`)
+        const res = await axios.get(`${API_URL}/booking/${id}`)
         const result = res.data;
         dispatch({type:GET_BOOKING_SUCCESS,result})
     }
@@ -33,7 +34,7 @@ export const getBook = (id) => async dispatch => {
 export const getdate = (rooms) => async dispatch => {
     dispatch({type:GET_BOOKING})
     try{
-        const res = await axios.get(`https://hhh-server.herokuapp.com/bookdate/${rooms}`)
+        const res = await axios.get(`${API_URL}/bookdate/${rooms}`)
         const result = res.data;
         dispatch({type:GET_BOOKING_SUCCESS,result})
     }

@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { getdate } from '../modules/booking';
+import { API_URL } from '../config/amuguna';
 
 
 
@@ -86,7 +87,7 @@ const onSubmit = (e)=>{
             insertbooking();
     }
     function insertbooking(){
-        axios.post('https://hhh-server.herokuapp.com/addbooking',formData)
+        axios.post(`${API_URL}/addbooking`,formData)
         .then(result=>{
             // console.log(result);
             document.location.href = '/Booking'
