@@ -8,6 +8,14 @@ import { useParams } from 'react-router-dom';
 
 
 const Result = () => {
+//검색값 받아오기
+const { data, loading, error } = useSelector(state => state.searchroom.rooms);
+const dispatch = useDispatch();
+// console.log(data[0])
+useEffect(()=> { 
+    dispatch(getRooms()) 
+},[dispatch])
+
     const [view, setView] = useState(false);
     const onClick = (bool) => {
         setView(bool)
@@ -15,7 +23,8 @@ const Result = () => {
     // 큰화면 보기(false) 안보기(true)
     let [id, setId] = useState(0); // 큰화면 화면이동용 ID
   useEffect(() => {
-  window.addEventListener("mousewheel",addid)},[id])
+    data && data.length >= 2 && (window.addEventListener("mousewheel",addid))},[id,data])
+    
 // 스크롤이벤트시 뒤의 함수를 실행시킨다. id를 1씩 더해줌
  const addid = () => {
     if(data && data.length > id+1){
@@ -28,14 +37,7 @@ const Result = () => {
 // const {keyword} = useParams();
 // console.log(keyword);
 
-//검색값 받아오기
 
-    const { data, loading, error } = useSelector(state => state.searchroom.rooms);
-    const dispatch = useDispatch();
-    // console.log(data[0])
-    useEffect(()=> { 
-        dispatch(getRooms()) 
-    },[dispatch])
     if(loading) return <div>로뒹</div>
     if(error) return <div>엘어</div>
     if(!data) return <div>값없음</div>
