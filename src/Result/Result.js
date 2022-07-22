@@ -39,12 +39,21 @@ const Result = () => {
     if(loading) return <div>로뒹</div>
     if(error) return <div>엘어</div>
     if(!data) return <div>값없음</div>
+
+    let imgurl = [];
+    for(let i=0; i<data.length;i++){
+        imgurl.push(data[i].imgurl.split(","))
+    }
+    for(let i=0; i<data.length; i++){
+        data[i].imgurl = imgurl[i][0]
+    }
+    console.log(data)
     return (
 
         //검색했을때 나오는 결과 페이지  --> 숙소 리스트 출력하는 페이지입니다.
         <div id="result">
             {/* <Resultpage></Resultpage> */}
-            { view ?  <Resultpage onClick={()=> onClick(false)} rooms={data}/>  : 
+            { view ?  <Resultpage onClick={()=> onClick(false)} rooms={data} />  : 
             <ResultDetailpage onClick={()=> onClick(true)} data={data} id={id} />  }
         </div>
     );

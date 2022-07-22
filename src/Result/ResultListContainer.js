@@ -37,6 +37,14 @@ const ResultListContainer = () => {
     if(error) return <div>에러발생</div>
     if(!data) return <div>데이터가 비어있음</div>
 
+    let imgurl = [];
+    for(let i=0; i<data.length;i++){
+        imgurl.push(data[i].imgurl.split(","))
+    }
+    for(let i=0; i<data.length; i++){
+        data[i].imgurl = imgurl[i][0]
+    }
+
     return (
         <div id="result">
         {/* <Resultpage></Resultpage> */}

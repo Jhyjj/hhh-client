@@ -1,10 +1,20 @@
 import React from 'react';
 
 const ShowBooking = ({data}) => {
-    console.log(data)
+    // console.log(data)
     const book = data
-    console.log(book)
+    console.log(book.length)
+    console.log(book[0].imgurl.split(","))
+    var imgs = []
+    for(let i=0; i<book.length; i++){
+        imgs.push(book[i].imgurl.split(","))    
+        }
 
+
+    for(let i=0; i<book.length; i++){
+        book[i].imgurl = imgs[i][0]
+    }
+    console.log(book[3].imgurl);
     return (
         
        <>
@@ -12,7 +22,7 @@ const ShowBooking = ({data}) => {
         <div id="Booking">
         <div className='left_img'>
                           <img src={`${book.imgurl}`} alt=''></img></div><div className='right_text'>
-                              <table classNa='left'>
+                              <table className='left'>
                                   <tr>
                                       <th>Name</th>
                                       <td>{book.rname}</td>
@@ -43,8 +53,10 @@ const ShowBooking = ({data}) => {
 
                           </div>
      
-    </div>))}
+    </div>
+    ))}
     </>
+    
       );
     
 };

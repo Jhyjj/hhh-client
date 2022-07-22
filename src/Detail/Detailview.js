@@ -20,8 +20,8 @@ SwiperCore.use([Navigation, Pagination, Autoplay])
 const Detailview = () => {
     const {id} = useParams();
     const {data,loading,error} = useSelector(state=>state.searchroom.room);
-    console.log(id);
-    console.log(data);
+    var imgs = [];
+    imgs = data ? data[0].imgurl.split(",") : ""
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(getRoom(id))
@@ -41,14 +41,11 @@ const Detailview = () => {
                     autoplay={{delay: 3000}}
                     loop={true}
                     >
-                    <SwiperSlide><img src={`${data[0].imgurl}`} alt=""/></SwiperSlide>
-                    <SwiperSlide><img src="/image/1-2.jpeg" alt=""/></SwiperSlide>
-                    <SwiperSlide><img src="/image/1-3.jpeg" alt=""/></SwiperSlide>
-                    <SwiperSlide><img src="/image/1-4.jpeg" alt=""/></SwiperSlide>
-                    <SwiperSlide><img src="/image/1-5.jpeg" alt=""/></SwiperSlide>
-                    <SwiperSlide><img src="/image/1-6.jpeg" alt=""/></SwiperSlide>
-                    <SwiperSlide><img src="/image/1-7.jpeg" alt=""/></SwiperSlide>
-                </Swiper>
+                    {imgs.map(imgs=>(
+                    <SwiperSlide><img src={`${imgs}`} alt=""/></SwiperSlide>
+
+                    )) }
+                    </Swiper>
                
                 </div>
 

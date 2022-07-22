@@ -102,19 +102,17 @@ const Sugso2 = () => {
      const onChangeImg2 = (info)=>{
          //파일 업로드 중일때
          if(info.file.status === 'uploading'){
-            console.log(info.fileList[0].name);
             console.log(info);
              return;
          }
          //파일 업로드 완료되었을때
          if(info.file.status === 'done'){
-             const res = info.file.response;
-             const res2 = info.fileList[0].response;
-             console.log(res);
+             const res2 = info.fileList;
              console.log(res2);
-             const imgurl = res.imgurl;
-             console.log(imgurl);
-             setImgurl(`http://localhost:3001/img/${imgurl}`);
+            const imgs = []; //이미지 리스트 배열
+            imgs.push(res2.map(data=>`http://localhost:3001/img/${data.name}`))
+            setImgurl(imgs.toString()) //배열을 다시 문자열로 변경
+            console.log(imgurl);
              setFormData({
                  ...formData,
                  imgurl: imgurl

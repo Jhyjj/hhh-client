@@ -28,9 +28,9 @@ const Header = () => {
                 <ul>
                     <li><Link to='/'>Home</Link></li>
                     <li onClick={()=>searchPopUp()}>Search</li>
-                    <li><Link to='/login'>Login</Link></li>
-                    <li><Link to='/join'>Join</Link></li>
-                    <li><Link to='/room'>숙소 등록</Link></li>
+                    {!sessionStorage.getItem("user_id") && <li><Link to='/login'>Login</Link></li>}
+                    {!sessionStorage.getItem("user_id") && <li><Link to='/join'>Join</Link></li>}
+                  {sessionStorage.getItem("user_id") ==='admin' && <li><Link to='/room'>숙소 등록</Link></li>}
                     <li><Link to='/Booking'>Reservation</Link></li>
                 </ul>
             </nav>

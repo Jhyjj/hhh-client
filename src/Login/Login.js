@@ -43,7 +43,6 @@ function login(){
             document.location.href = '/'
         // 작업 완료 되면 페이지 이동(새로고침)
         }
-        
     })
     .catch(e=>{
         console.log(e);
@@ -70,7 +69,7 @@ function login(){
                             <TableRow>
                                 <TableCell><span>*</span>PASSWORD</TableCell>
                                 <TableCell>
-                                    <input name='pw' onChange={onChange}></input>
+                                    <input name='pw' type="password" onChange={onChange}></input>
                                 </TableCell>
                             </TableRow>
                         </TableBody>
