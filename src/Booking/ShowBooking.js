@@ -15,7 +15,7 @@ const ShowBooking = ({data}) => {
     for(let i=0; i<book.length; i++){
         book[i].imgurl = imgs[i][0]
     }
-    console.log(book[3].imgurl);
+    // console.log(book[3].imgurl);
     return (
         
        <>

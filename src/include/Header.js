@@ -31,7 +31,8 @@ const Header = () => {
                     {!sessionStorage.getItem("user_id") && <li><Link to='/login'>Login</Link></li>}
                     {!sessionStorage.getItem("user_id") && <li><Link to='/join'>Join</Link></li>}
                   {sessionStorage.getItem("user_id") ==='admin' && <li><Link to='/room'>숙소 등록</Link></li>}
-                    <li><Link to='/Booking'>Reservation</Link></li>
+                  {/* 세션이 있는 경우에만 /Booking로 연결, 없을때는 로그인페이지로 이동시키기 */}
+                    <li>{sessionStorage.getItem("user_id")?<Link to='/Booking'>Reservation</Link>:<Link to='/login'>Reservation</Link>}</li>
                 </ul>
             </nav>
             <Search/>
