@@ -38,9 +38,9 @@ useEffect(()=> {
 // console.log(keyword);
 
 
-    if(loading) return <div>로뒹</div>
-    if(error) return <div>엘어</div>
-    if(!data) return <div>값없음</div>
+    if(loading) return <div>로딩중입니다.</div>
+    if(error) return <div>에러..</div>
+    if(!data) return null
 
     let imgurl = [];
     for(let i=0; i<data.length;i++){

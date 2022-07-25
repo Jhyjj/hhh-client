@@ -56,3 +56,9 @@
     padding-top: 4px;
 }
 
+@media screen and (max-width:768px){
+#input_number{
+    margin: 0;
+}
+
+}

@@ -34,3 +34,16 @@ th{
     justify-content: space-around;
 }
 /* 텍스트의 크기를 최대 900으로 설정해 img와 합쳐서 1200을 맞춰서 img의 위치고정 */
+
+
+@media screen and (max-width:768px){
+    .left_img img{
+        width:100%;
+        height:300px;
+    }
+    #Booking{
+        flex-wrap: wrap;
+    }
+    
+
+}

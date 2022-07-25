@@ -93,3 +93,52 @@ input::placeholder {
     padding: 5px 10px;
     margin-top: 5px;
 }
+
+@media screen and (max-width:768px){
+    #join {
+        width: 50%;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    #join_text {
+        width: 70%;
+        border-right: 2px solid #eee;
+        color: #fff;
+        font-size: 20px;
+    }
+    #join_input {
+        width: 100%;
+        margin: 0;
+    }
+    #join_input p{
+        font-size: 12px;
+        display: inline-block;
+    }
+    #join_input input{
+        width: 80px;
+    }
+    #join_text div {
+        width: 80px;
+        height: 500px;
+        border-right: 2px solid #eee;
+        color: #fff;
+        font-size: 30px;
+        position: relative;
+    }
+    #join_text div h1 {
+        color:#6667AB;
+        font-weight: bold;
+        transform: rotate(-90deg);
+        position: absolute;
+        top: 30px;
+        right: -30px;
+    }
+    #join_text h1 span{
+        vertical-align: middle;
+        font-size: 100px;
+        font-weight: 900;
+    }
+    .add{
+        margin: 5px 0;
+    }
+}
