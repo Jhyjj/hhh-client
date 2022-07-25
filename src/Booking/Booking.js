@@ -16,7 +16,7 @@ const Booking = () => {
 
     if(loading) return <div>조금만 기다려주세요..🤔</div>
     if(error) return <div>에러발생.. 관리자에게 문의해주세요</div>
-    if(!data) return <div>예약내역이 없습니다.</div>
+    if(!data) return <div>데이터가 없음</div>
     return (
         <ShowBooking data={data} />
     );
