@@ -173,3 +173,32 @@
     left: 50%;
     transform: translate(-50%, 0);
 }
+
+@media screen and (max-width:768px){
+    .toggle{
+        display: none;
+    }
+    .text_h1{
+        font-size: 18px;
+    }
+    #result{
+        padding-top:0;
+    }
+    #result li{
+        width: 90%;
+        height: 300px;
+        margin: 20px 0;
+        position: relative;
+        overflow: hidden;
+    }
+    #result ul {
+        max-width: 768px;
+    }
+    #result li .imgbox img{
+        width:324px;
+    }
+    #result li .textbox {
+        padding:0;
+    }
+    
+}

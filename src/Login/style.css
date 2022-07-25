@@ -55,3 +55,18 @@
     border-right: 1px solid #6667AB;
     border-bottom: 1px solid #6667AB;
 }
+
+@media screen and (max-width:768px){
+    #login {
+        width: 90%;
+    }
+    #login_text div {
+        width: 70%;
+        border-right: 2px solid #eee;
+        color: #fff;
+        font-size: 20px;
+    }
+    #login_input input{
+        width: 100%;
+    }
+}

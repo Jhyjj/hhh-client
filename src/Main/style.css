@@ -32,3 +32,10 @@
 .swiper-button-prev::after {
     color: white !important;
 }
+
+
+@media screen and (max-width:768px){
+    #visual{
+      height: 50%;
+    }
+  }
