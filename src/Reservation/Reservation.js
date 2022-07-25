@@ -62,7 +62,7 @@ const [formData, setFormData] = useState({
     rid : sessionStorage.getItem("user_id"),
     rphone : "",
     price : roomd.price,
-    imgurl : img
+    imgurl : img[0][0]
 })
 
     const onChange=(e)=>{
@@ -70,7 +70,7 @@ const [formData, setFormData] = useState({
         const {name,value} = e.target;
         setFormData({
             ...formData,
-            [name]:value
+            [name]:value,
     })
 };
 
