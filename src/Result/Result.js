@@ -16,7 +16,7 @@ useEffect(()=> {
     dispatch(getRooms()) 
 },[dispatch])
 
-    const [view, setView] = useState(false);
+    const [view, setView] = useState(true);
     const onClick = (bool) => {
         setView(bool)
     }

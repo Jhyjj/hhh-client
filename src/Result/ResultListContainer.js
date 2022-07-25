@@ -19,7 +19,7 @@ const ResultListContainer = () => {
     },[dispatch, keyword])
 
     
-    const [view, setView] = useState(false);
+    const [view, setView] = useState(true);
     const onClick = (bool) => {
         setView(bool)
     }
@@ -30,8 +30,6 @@ const ResultListContainer = () => {
   useEffect(() => {
     data && data.length >= 2 && (window.addEventListener("mousewheel",addid))},[id,data])
   
-    console.log(data && data.length)
-    console.log(id)
 // 스크롤이벤트시 뒤의 함수를 실행시킨다. id를 1씩 더해줌
  const addid = () => {
     if(data && data.length > id+1){

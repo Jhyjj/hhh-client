@@ -89,8 +89,8 @@ const onSubmit = (e)=>{
     function insertbooking(){
         axios.post(`${API_URL}/addbooking`,formData)
         .then(result=>{
-            // console.log(result);
-            document.location.href = '/Booking'
+            console.log(result);
+            // document.location.href = '/Booking'
         })
         .catch(e=>{
             console.log(e);

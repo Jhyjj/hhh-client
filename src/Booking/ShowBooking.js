@@ -15,13 +15,15 @@ const ShowBooking = ({data}) => {
     // for(let i=0; i<book.length; i++){
     //     book[i].imgurl = imgs[i][0]
     // }
+
     // console.log(book[3].imgurl);
     // if(!book.imgurl) {alert('예약내역이 없습니다.')
     //                     document.location.href ='/'}
 
     return (
-        
        <>
+        
+
        {book.map(book=>(
         <div id="Booking">
         <div className='left_img'>
