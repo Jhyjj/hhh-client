@@ -18,16 +18,6 @@ const ResultListContainer = () => {
         dispatch(getKeyword(keyword))
     },[dispatch, keyword])
 
-    let imgurl = [];
-    for(let i=0; i<data.length;i++){
-        imgurl.push(data[i].imgurl.split(","))
-    }
-    for(let i=0; i<data.length; i++){
-        data[i].imgurl = imgurl[i][0]
-    }
-
-
-    
     const [view, setView] = useState(false);
     const onClick = (bool) => {
         setView(bool)
@@ -39,8 +29,6 @@ const ResultListContainer = () => {
   useEffect(() => {
     data && data.length >= 2 && (window.addEventListener("mousewheel",addid))},[id,data])
   
-    console.log(data && data.length)
-    console.log(id)
 // 스크롤이벤트시 뒤의 함수를 실행시킨다. id를 1씩 더해줌
  const addid = () => {
     if(data && data.length > id+1){
@@ -53,6 +41,14 @@ const ResultListContainer = () => {
 if(loading) return <div>검색결과를 불러오는 중입니다..</div>
 if(error) return <div>에러발생</div>
 if(!data) return <div>데이터가 비어있음</div>
+let imgurl = [];
+for(let i=0; i<data.length;i++){
+    imgurl.push(data[i].imgurl.split(","))
+}
+for(let i=0; i<data.length; i++){
+    data[i].imgurl = imgurl[i][0]
+}
+
     return (
         <div id="result">
         {/* <Resultpage></Resultpage> */}
