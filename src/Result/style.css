@@ -182,23 +182,33 @@
         font-size: 18px;
     }
     #result{
-        padding-top:0;
+        width:100%;
     }
     #result li{
-        width: 90%;
+        padding-left: 15px;
+
         height: 300px;
-        margin: 20px 0;
+        margin: 30px 0;
         position: relative;
-        overflow: hidden;
+        overflow:inherit;
+    }
+    
+    #result li .imgbox{
+
+        height: 80%;
+        border-radius: 0%;
+        background-color: inherit;
+        overflow: inherit;
     }
     #result ul {
-        max-width: 768px;
+        max-width: 50%;
+        justify-content: flex-end;
     }
     #result li .imgbox img{
-        width:324px;
+       width: 350px;
     }
     #result li .textbox {
-        padding:0;
+        padding-top:20px;
     }
     
 }

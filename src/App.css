@@ -144,12 +144,29 @@ a{
 }
 
 @media screen and (max-width:768px){
-  #header{ max-width: 768px;}
+  #header{ max-width: 768px;
+    font-size: 11px;
+    padding: 0 10px;}
   #header img{
     width: 100px;
     height: 50px;
   }
   #visual{
     height: 150px;
+  }
+  #footer img{
+    width: 100px;
+    height:50px;
+  }
+  #header .userid{
+    font-size: 10px;
+    padding-right: 5px;
+  }
+  #header button{
+    width: 50px;
+    height: 10px;
+    top:-10px;
+    font-size: 10px;
+    font-weight: bold;
   }
 }

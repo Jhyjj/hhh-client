@@ -180,6 +180,7 @@ const Sugso2 = () => {
                     <Button id='number' onClick={onDecrease}>-</Button>
                     <Input id='input_number' value={number} name="minp" onChange={onChange}></Input>
                     <Button id='number' onClick={onIncrease}>+</Button>
+                    <br/>
 
                     최대인원
                     <Button id='number' onClick={onDecrease2}>-</Button>
