@@ -2,20 +2,22 @@ import React from 'react';
 import { API_URL } from '../config/amuguna';
 
 const ShowBooking = ({data}) => {
-    // console.log(data)
+    console.log(data)
     const book = data
-    console.log(book.length)
-    console.log(book[0].imgurl.split(","))
-    var imgs = []
-    for(let i=0; i<book.length; i++){
-        imgs.push(book[i].imgurl.split(","))    
-        }
+    // console.log(book.length)
+    // console.log(book[0].imgurl.split(","))
+    // var imgs = []
+    // for(let i=0; i<book.length; i++){
+    //     imgs.push(book[i].imgurl.split(","))    
+    //     }
 
 
-    for(let i=0; i<book.length; i++){
-        book[i].imgurl = imgs[i][0]
-    }
+    // for(let i=0; i<book.length; i++){
+    //     book[i].imgurl = imgs[i][0]
+    // }
     // console.log(book[3].imgurl);
+    if(!book.imgurl) {alert('예약내역이 없습니다.')
+                        document.location.href ='/'}
     return (
         
        <>
