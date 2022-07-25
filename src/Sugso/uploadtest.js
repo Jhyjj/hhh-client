@@ -45,7 +45,7 @@ const Sugso2 = () => {
     }
 
     function insertRooms(){
-        axios.post('http://localhost:3001/addroom',formData)
+        axios.post('https://hhh-server.herokuapp.com/addroom',formData)
         .then(result=>{
             console.log(result);
             console.log(formData);
@@ -110,7 +110,7 @@ const Sugso2 = () => {
              const res2 = info.fileList;
              console.log(res2);
             const imgs = []; //이미지 리스트 배열
-            imgs.push(res2.map(data=>`http://localhost:3001/img/${data.name}`))
+            imgs.push(res2.map(data=>`${data.name}`))
             setImgurl(imgs.toString()) //배열을 다시 문자열로 변경
             console.log(imgurl);
              setFormData({
@@ -130,7 +130,7 @@ const Sugso2 = () => {
             <Form onFinish={onSubmit}>
                 <Form.Item
                 label={<div className='upload-label'>숙소 사진</div>}>
-                    <Upload id='poto' onChange={onChangeImg2} listType="picture" showUploadList={false} name="image" action={'http://localhost:3001/upload'} multiple> 
+                    <Upload id='poto' onChange={onChangeImg2} listType="picture" showUploadList={false} name="image" action={'https://hhh-server.herokuapp.com/upload'} multiple> 
                         <div id='upload_img'>
                             <img src='./image/camera.png' alt=''></img>
                             <span>이미지를 업로드 해주세요.</span>

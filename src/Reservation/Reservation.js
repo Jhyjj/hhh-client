@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { getdate } from '../modules/booking';
+import { API_URL } from '../config/amuguna';
 
 
 
@@ -61,7 +62,7 @@ const [formData, setFormData] = useState({
     rid : sessionStorage.getItem("user_id"),
     rphone : "",
     price : roomd.price,
-    imgurl : img
+    imgurl : img[0][0]
 })
 
     const onChange=(e)=>{
@@ -86,10 +87,10 @@ const onSubmit = (e)=>{
             insertbooking();
     }
     function insertbooking(){
-        axios.post('http://localhost:3001/addbooking',formData)
+        axios.post(`${API_URL}/addbooking`,formData)
         .then(result=>{
-            // console.log(result);
-            document.location.href = '/Booking'
+            console.log(result);
+            // document.location.href = '/Booking'
         })
         .catch(e=>{
             console.log(e);
@@ -189,7 +190,7 @@ const disabledDays = [
             
                 <p>객실 예약</p>
         <div id="Reservation">
-            <div className="reser_left_img"><img src={`${img[0][0]}`} alt="" /></div>
+            <div className="reser_left_img"><img src={`${API_URL}/img/${img[0][0]}`} alt="" /></div>
             <form onSubmit={onSubmit}>
             <div className="right">
                 예약일지정

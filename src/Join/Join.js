@@ -4,6 +4,8 @@ import { Table, TableBody, TableCell, TableRow } from '@mui/material';
 import PopupDom from './PopupDom';
 import PopupPostCode from './PopupPostCode';
 import axios from 'axios';
+import { API_URL } from '../config/amuguna';
+
 
 const Join = () => {
     // 팝업창 상태 관리
@@ -62,7 +64,7 @@ const Join = () => {
         }
     
     function insertMembers(){
-        axios.post('http://localhost:3001/addjoin',formData)
+        axios.post(`${API_URL}/addjoin`,formData)
         .then(result=>{
             console.log(result);
             document.location.href = '/'

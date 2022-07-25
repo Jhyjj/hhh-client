@@ -47,7 +47,7 @@ const Sugso = () => {
             console.log(value);
           }
         axios
-            .post("http://localhost:3001/upload", formData1)
+            .post("https://hhh-server.herokuapp.com/upload", formData1)
             .then(res => {
                 console.log(res);
                 const { fileName } = res.data;
@@ -84,7 +84,7 @@ const Sugso = () => {
     }
 
     function insertRooms(){
-        axios.post('http://localhost:3001/addroom',formData)
+        axios.post('https://hhh-server.herokuapp.com/addroom',formData)
         .then(result=>{
             // console.log(result);
         })
@@ -143,7 +143,7 @@ const Sugso = () => {
             <Form onFinish={onSubmit} encType='multipart/form-data'>
                 <Form.Item
                 label={<div className='upload-label'>숙소 사진</div>}>
-                    <Upload id='fileAdd' action="http://localhost:3001/upload" onChange={onChangeImg} listType="picture" 
+                    <Upload id='fileAdd' action="https://hhh-server.herokuapp.com/upload" onChange={onChangeImg} listType="picture" 
                     showUploadList={false} name="img"> 
                         <div id='upload_img' >
                             <img src='./image/camera.png' alt=''></img>

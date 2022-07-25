@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './style.css';
 import { Table, TableBody, TableCell, TableRow } from '@mui/material';
 import axios from 'axios';
+import { API_URL } from '../config/amuguna';
 
 // id,pw 관리
 const Login = () => {
@@ -25,7 +26,7 @@ const onSubmit =(e)=>{
 }
 
 function login(){
-    axios.post('http://localhost:3001/member',formData)
+    axios.post(`${API_URL}/member`,formData)
     .then(result=>{
         const {id, pw} = result.data
         console.log(pw)

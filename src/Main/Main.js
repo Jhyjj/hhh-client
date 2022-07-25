@@ -22,8 +22,9 @@ const Main = () => {
       loop={true} //무한반복
         >
         <SwiperSlide><img src="image/main.jpeg" alt=""></img></SwiperSlide>
-        <SwiperSlide><img src="image/test.jpeg" alt=""></img></SwiperSlide>
-        <SwiperSlide><img src="image/main.jpeg" alt=""></img></SwiperSlide>
+        <SwiperSlide><img src="image/1-5.jpeg" alt=""></img></SwiperSlide>
+        <SwiperSlide><img src="image/4-3.jpeg" alt=""></img></SwiperSlide>
+        <SwiperSlide><img src="image/4-1.jpg" alt=""></img></SwiperSlide>
       </Swiper>
     
     </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { API_URL } from '../config/amuguna';
 
 const Resultpage = ({rooms,onClick}) => {
     
@@ -12,7 +13,7 @@ const Resultpage = ({rooms,onClick}) => {
                     <Link to={`/detail/${room.no}`}>
                         <li key={room.no}>
                             <div className='imgbox one'>
-                                <img src={room.imgurl} alt=""/>
+                                <img src={`${API_URL}/img/${room.imgurl}`} alt=""/>
                             </div> 
                             <div className='textbox'>
                                 <p className='text_name'>{room.rname}</p>

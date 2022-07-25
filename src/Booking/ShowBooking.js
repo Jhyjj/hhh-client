@@ -1,27 +1,32 @@
 import React from 'react';
+import { API_URL } from '../config/amuguna';
 
 const ShowBooking = ({data}) => {
     // console.log(data)
     const book = data
-    console.log(book.length)
-    console.log(book[0].imgurl.split(","))
-    var imgs = []
-    for(let i=0; i<book.length; i++){
-        imgs.push(book[i].imgurl.split(","))    
-        }
+    // console.log(book.length)
+    // console.log(book[0].imgurl.split(","))
+    // var imgs = []
+    // for(let i=0; i<book.length; i++){
+    //     imgs.push(book[i].imgurl.split(","))    
+    //     }
 
 
-    for(let i=0; i<book.length; i++){
-        book[i].imgurl = imgs[i][0]
+    // for(let i=0; i<book.length; i++){
+    //     book[i].imgurl = imgs[i][0]
+    // }
+    if(data){
+      alert('예약내역이 없습니다.')
+      document.location.href = '/'
     }
-    console.log(book[3].imgurl);
     return (
-        
        <>
+        
+
        {book.map(book=>(
         <div id="Booking">
         <div className='left_img'>
-                          <img src={`${book.imgurl}`} alt=''></img></div><div className='right_text'>
+                          <img src={`${API_URL}/img/${book.imgurl}`} alt=''></img></div><div className='right_text'>
                               <table className='left'>
                                   <tr>
                                       <th>Name</th>
