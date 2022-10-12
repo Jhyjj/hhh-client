@@ -64,13 +64,13 @@ function login(){
                             <TableRow>
                                 <TableCell><span>*</span>ID</TableCell>
                                 <TableCell>
-                                    <input name='id' onChange={onChange}></input>
+                                    <input name='id' onChange={onChange} autoComplete="off"></input>
                                 </TableCell>
                             </TableRow>
                             <TableRow>
                                 <TableCell><span>*</span>PASSWORD</TableCell>
                                 <TableCell>
-                                    <input name='pw' type="password" onChange={onChange}></input>
+                                    <input name='pw' type="password" onChange={onChange} autoComplete="off"></input>
                                 </TableCell>
                             </TableRow>
                         </TableBody>

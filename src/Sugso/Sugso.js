@@ -5,6 +5,7 @@ import './style.css';
 import TextArea from 'antd/lib/input/TextArea';
 import { AiOutlineArrowUp } from 'react-icons/ai';
 import axios from 'axios';
+import { API_URL } from '../config/amuguna';
 
 
 const Sugso = () => {
@@ -47,7 +48,7 @@ const Sugso = () => {
             console.log(value);
           }
         axios
-            .post("https://hhh-server.herokuapp.com/upload", formData1)
+            .post(`${API_URL}/upload`, formData1)
             .then(res => {
                 console.log(res);
                 const { fileName } = res.data;
@@ -84,7 +85,7 @@ const Sugso = () => {
     }
 
     function insertRooms(){
-        axios.post('https://hhh-server.herokuapp.com/addroom',formData)
+        axios.post(`${API_URL}/addroom`,formData)
         .then(result=>{
             // console.log(result);
         })
@@ -143,7 +144,7 @@ const Sugso = () => {
             <Form onFinish={onSubmit} encType='multipart/form-data'>
                 <Form.Item
                 label={<div className='upload-label'>숙소 사진</div>}>
-                    <Upload id='fileAdd' action="https://hhh-server.herokuapp.com/upload" onChange={onChangeImg} listType="picture" 
+                    <Upload id='fileAdd' action={`${API_URL}/upload`} onChange={onChangeImg} listType="picture" 
                     showUploadList={false} name="img"> 
                         <div id='upload_img' >
                             <img src='./image/camera.png' alt=''></img>

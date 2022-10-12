@@ -48,13 +48,13 @@ const Search = () => {
     return (
         <div id="Search">
             <form onSubmit={onSubmit}>
-                <input placeholder='당신이 머물고싶은 곳은 어떤 곳인가요?' className='searchinput' onChange={onChange}/>
+                <input placeholder='당신이 머물고싶은 곳은 어떤 곳인가요?' className='searchinput' onChange={onChange} autoComplete="off"/>
                 <button type='submit'>GO</button>
                 <ul>
                 <Link to ='/searchResultk/바다'><input type="button" className='likebtn' onClick={onClick} value="바다"/></Link>
                     <Link to ='/searchResultk/숲'><input type="button" className='likebtn' onClick={onClick} value="숲"/></Link>
                     <Link to ='/searchResultk/도심'><input type="button" className='likebtn' onClick={onClick} value="도심"/></Link>
-                    <Link to ='/searchResultk/시골'><input type="button" className='likebtn' onClick={onClick} value="시골"/></Link>
+                    <Link to ='/searchResultk/휴양지'><input type="button" className='likebtn' onClick={onClick} value="휴양지"/></Link>
                     <Link to ='/searchResult'><li className='likebtn' onClick={PrintList}>모두 보기</li></Link>
                 </ul>
             </form>

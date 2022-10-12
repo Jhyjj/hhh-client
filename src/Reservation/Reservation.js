@@ -90,7 +90,7 @@ const onSubmit = (e)=>{
         axios.post(`${API_URL}/addbooking`,formData)
         .then(result=>{
             console.log(result);
-            // document.location.href = '/Booking'
+            document.location.href = '/Booking'
         })
         .catch(e=>{
             console.log(e);
@@ -236,8 +236,8 @@ const disabledDays = [
                     </tr>
                     <tr>
                         <td colspan={2}>
-                            <button >예약하기</button>
-                            <button>취소</button>
+                            <button type="submit">예약하기</button>
+                            <button type="reset">취소</button>
                         </td>
                     </tr>
                 </table>

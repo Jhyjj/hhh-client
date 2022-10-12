@@ -88,34 +88,34 @@ const Join = () => {
                             <TableRow>
                                 <TableCell><span>*</span><p>NAME</p></TableCell>
                                 <TableCell className='no_input'>
-                                    <input name="a_name" onChange={onChange}/>
+                                    <input name="a_name" onChange={onChange} autoComplete="off"/>
                                 </TableCell>
                             </TableRow>
                             <TableRow>
                                 <TableCell><span>*</span><p>ID</p></TableCell>
                                 <TableCell className='no_input'>
-                                    <input name="a_id" onChange={onChange}/>
+                                    <input name="a_id" onChange={onChange} autoComplete="off"/>
                                 </TableCell>
                             </TableRow>
                             <TableRow>
                                 <TableCell><span>*</span><p>PASSWORD</p></TableCell>
                                 <TableCell className='no_input'>
-                                    <input name="a_pw" type="password" onChange={onChange}/>
+                                    <input name="a_pw" type="password" onChange={onChange} autoComplete="off"/>
                                 </TableCell>
                             </TableRow>
                             <TableRow>
                                 <TableCell><span>*</span><p>PHONE</p></TableCell>
                                 <TableCell className="pinput" >
-                                    <input className="pinput" name="a_p1" type="text" onChange={onChange}/>─
-                                    <input className="pinput" name="a_p2" type="text" onChange={onChange}/>─
-                                    <input className="pinput" name="a_p3" type="text" onChange={onChange}/>
+                                    <input className="pinput" name="a_p1" type="text" onChange={onChange} autoComplete="off"/>─
+                                    <input className="pinput" name="a_p2" type="text" onChange={onChange} autoComplete="off"/>─
+                                    <input className="pinput" name="a_p3" type="text" onChange={onChange} autoComplete="off"/>
                                 </TableCell>
                             </TableRow>
                             <TableRow>
                                 <TableCell><span>*</span><p>ADDRESS</p></TableCell>
                                 <TableCell className='add_input'>
-                                    <input className='add' placeholder='주소' name="a_add1" value={formData.a_add1} onChange={onChange}/>
-                                    <input className='add' placeholder='상세주소' name="a_add2" onChange={onChange}/>
+                                    <input className='add' placeholder='주소' name="a_add1" value={formData.a_add1} onChange={onChange} autoComplete="false"/>
+                                    <input className='add' placeholder='상세주소' name="a_add2" onChange={onChange} autoComplete="off"/>
                                     <button className='add_btn' type='button' onClick={openPostCode}>우편번호검색</button>
                                     <div id='popupDom'>
                                         {
@@ -134,7 +134,7 @@ const Join = () => {
                             </TableRow>
                         </TableBody>
                     </Table>
-                    <button className='join_btn'>회원가입</button>
+                    <button type="submit" className='join_btn'>회원가입</button>
                 </form>
             </div>
         </div>
